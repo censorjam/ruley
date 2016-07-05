@@ -1,0 +1,5 @@
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\Ruley.Tests\bin\Debug\Ruley.Tests.exe.config
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\Ruley.Tests\bin\Debug\Ruley.Tests.exe
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\Ruley.Tests\bin\Debug\Ruley.Tests.pdb
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\Ruley.Tests\obj\Debug\Ruley.Tests.exe
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\Ruley.Tests\obj\Debug\Ruley.Tests.pdb

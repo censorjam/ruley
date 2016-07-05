@@ -1,0 +1,36 @@
+﻿{
+    "name": "test rule2",
+    "debug": false,
+
+    "input": {
+        "$type": "Ruley.Core.Inputs.TestInput, Ruley",
+        "key": "errors",
+        "interval":  1000
+    },
+
+    "filters": [
+        {
+            "$type": "@addfield",
+            "destination": "f",
+            "value": 50
+        },
+        {
+            "$type": "@conditional",
+            "field": "f",
+            "match": "=",
+            "level": 100
+        },
+        {
+            "$type": "@addfield",
+            "destination": "id2",
+            "value": "{count}"
+        }
+    ],
+
+    "outputs": [
+        {
+            "$type": "@console",
+            "enabled": true
+        }
+    ]
+}

@@ -1,0 +1,60 @@
+﻿{
+    "name": "test rule",
+    "debug": false,
+
+    "input": {
+        "$type": "Ruley.Core.Inputs.TestInput, Ruley",
+        "interval": 300
+    },
+
+    "filters": [
+        {
+            "$type": "@groupby",
+            "key": "appName",
+            "filter": {
+                "$type": "@chain",
+                "filters": [
+                    {
+                        "$type": "@count",
+                        "destination": "countbefore"
+                    },
+                    {
+                        "$type": "@throttle",
+                        "interval": 3000
+                    },
+                    {
+                        "$type": "@count",
+                        "destination": "count"
+                    }
+                ]
+            }
+        },
+        {
+            "$type": "@conditional",
+            "field": "count",
+            "level": "5",
+            "match": ">",
+            "true": {
+                "$type": "@slackf",
+                "webHookUrl": "@slack_url",
+                "username": "error-bot",
+                "emoji": ":smiling_imp:",
+                "message": "*{appName}* ({host}) \n>(x{throttleCount}) \n>Created = {$created}\n"
+            },
+            "false": {
+                "$type": "@passthrough"
+            }
+        },
+        { 
+            "$type": "@messagebuspublisher",
+            "key": "errors"
+        }
+    ],
+
+    "outputs": [
+        {
+            "$type": "@console",
+            "enabled": false
+        }
+    ]
+}

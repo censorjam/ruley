@@ -1,0 +1,29 @@
+﻿{
+    "name": "test rule2",
+    "debug": false,
+
+    "input": {
+        "$type": "Ruley.Core.Inputs.MessageBusInput, Ruley",
+        "key": "errors"
+    },
+
+    "filters": [
+        {
+            "$type": "@addfield",
+            "destination": "id",
+            "value": 50
+        },
+        {
+            "$type": "@addfield",
+            "destination": "id2",
+            "value": "{count}"
+        }
+    ],
+
+    "outputs": [
+        {
+            "$type": "@console",
+            "enabled": true
+        }
+    ]
+}

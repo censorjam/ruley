@@ -1,0 +1,22 @@
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\ConsoleApplication1\bin\Debug\rules\json1.json
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\ConsoleApplication1\bin\Debug\rules\json2 - Copy.json
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\ConsoleApplication1\bin\Debug\Ruley.pdb
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\ConsoleApplication1\bin\Debug\NCalc.dll
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\ConsoleApplication1\bin\Debug\Newtonsoft.Json.dll
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\ConsoleApplication1\bin\Debug\SmartFormat.dll
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\ConsoleApplication1\bin\Debug\System.Reactive.Core.dll
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\ConsoleApplication1\bin\Debug\System.Reactive.Interfaces.dll
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\ConsoleApplication1\bin\Debug\System.Reactive.Linq.dll
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\ConsoleApplication1\bin\Debug\System.Reactive.PlatformServices.dll
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\ConsoleApplication1\bin\Debug\System.Reactive.Windows.Threading.dll
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\ConsoleApplication1\bin\Debug\Newtonsoft.Json.xml
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\ConsoleApplication1\bin\Debug\SmartFormat.pdb
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\ConsoleApplication1\bin\Debug\System.Reactive.Core.xml
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\ConsoleApplication1\bin\Debug\System.Reactive.Interfaces.xml
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\ConsoleApplication1\bin\Debug\System.Reactive.Linq.xml
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\ConsoleApplication1\bin\Debug\System.Reactive.PlatformServices.xml
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\ConsoleApplication1\bin\Debug\System.Reactive.Windows.Threading.xml
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\ConsoleApplication1\obj\Debug\Ruley.pdb
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\ConsoleApplication1\bin\Debug\Ruley.dll.config
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\ConsoleApplication1\bin\Debug\Ruley.dll
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\ConsoleApplication1\obj\Debug\Ruley.dll

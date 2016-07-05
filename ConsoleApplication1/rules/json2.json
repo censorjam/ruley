@@ -1,0 +1,70 @@
+﻿{
+    "name": "test rule",
+    "debug": false,
+
+    "input": {
+        "$type": "Ruley.Core.Inputs.TestInput, Ruley",
+        "interval": 1000
+    },
+
+    "filters": [
+        {
+            "$type": "@groupby",
+            "key": "appName",
+            "filter": {
+                "$type": "@chain",
+                "filters": [
+
+                ]
+            }
+        },
+        {
+            "$type": "@concat",
+            "fields": [ "o.value", "appName" ],
+            "destination": "testthing"
+        },
+        {
+            "$type": "@throttle",
+            "enabled": true,
+            "key": "appName",
+            "interval": 2000,
+            "countField": "throttleCount"
+        },
+        {
+            "$type": "@prev",
+            "destination": "prev"
+        },
+        {
+            "$type": "@calc",
+            "expression": "{o.value} / {prev.o.value}",
+            "destination": "change",
+            "debug": true
+        },
+        {
+            "$type": "@map",
+            "source": "appName",
+            "mapping": [
+                [ "FinsCoreService2", "fins" ],
+                [ "sportscoreservice", "sports" ],
+                [ "sportscoreservice2", "sports" ],
+                [ "$default", "common" ]
+            ],
+            "destination": "slackChannel"
+        }
+    ],
+
+    "outputs": [
+        {
+            "$type": "@slack",
+            "enabled": false,
+            "webHookUrl": "@slack_url",
+            "username": "error-bot",
+            "emoji": ":smiling_imp:",
+            "message": "*{appName}* ({host}) \n>(x{throttleCount}) \n>Created = {$created}\n"
+        },
+        {
+            "$type": "@console",
+            "enabled": true
+        }
+    ]
+}

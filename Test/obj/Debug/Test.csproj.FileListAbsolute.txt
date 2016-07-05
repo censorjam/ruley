@@ -1,0 +1,21 @@
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\Test\bin\Debug\rules\json1.json
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\Test\bin\Debug\rules\json2 - Copy.json
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\Test\bin\Debug\Test.exe.config
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\Test\bin\Debug\Test.exe
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\Test\bin\Debug\Test.pdb
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\Test\bin\Debug\Ruley.exe
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\Test\bin\Debug\System.Reactive.Linq.dll
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\Test\bin\Debug\SmartFormat.dll
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\Test\bin\Debug\Newtonsoft.Json.dll
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\Test\bin\Debug\System.Reactive.Core.dll
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\Test\bin\Debug\NCalc.dll
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\Test\bin\Debug\System.Reactive.Interfaces.dll
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\Test\bin\Debug\Ruley.pdb
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\Test\bin\Debug\System.Reactive.Linq.xml
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\Test\bin\Debug\SmartFormat.pdb
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\Test\bin\Debug\Newtonsoft.Json.xml
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\Test\bin\Debug\System.Reactive.Core.xml
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\Test\bin\Debug\System.Reactive.Interfaces.xml
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\Test\obj\Debug\Test.exe
+C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\Test\obj\Debug\Test.pdb

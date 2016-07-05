@@ -1,0 +1,20 @@
+﻿{
+    "name": "test rule",
+    "debug": false,
+
+    "input": {
+        "$type": "Ruley.Core.Inputs.TestInput, Ruley",
+        "interval": 300
+    },
+
+    "filters": [
+        
+    ],
+
+    "outputs": [
+        {
+            "$type": "@console",
+            "enabled": false
+        }
+    ]
+}
