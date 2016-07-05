@@ -15,10 +15,11 @@ namespace Ruley.Core.Filters
         {
             var dest = Destination.Get(msg);
             var val = Value.Get(msg);
+
             Console.WriteLine("dest = {0}, val = {1}", dest, val);
 
             msg.SetValue(dest, val);
             return msg;
-        } 
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
 using Newtonsoft.Json;
@@ -8,50 +9,36 @@ namespace Ruley.Core.Filters
     public class MapFilter : InlineFilter
     {
         [JsonProperty(Required = Required.Always)]
-        public string Source { get; set; }
+        public Property<string> Field { get; set; }
 
         [JsonProperty(Required = Required.Always)]
-        public string Destination { get; set; }
+        public Property<string> Destination { get; set; }
 
         [JsonProperty(Required = Required.Always)]
         public List<object[]> Mapping { get; set; }
 
-        //todo add this
-        public object MatchCase { get; set; }
+        public Property<object> DefaultValue { get; set; }
 
-        public override void Validate()
+        public override void ValidateComposition()
         {
-            //todo
         }
 
         public override ExpandoObject Apply(ExpandoObject msg)
         {
-            bool matched = false;
             foreach (var mapping in Mapping)
             {
                 var s = mapping[0].ToString();
-                if (msg.GetValue(Source).ToString() == s)
+                if (msg.GetValue(Field.Get(msg)).ToString() == s)
                 {
-                    matched = true;
-                    msg.SetValue(Destination, mapping[1]);
-                    break;
+                    msg.SetValue(Destination.Get(msg), mapping[1]);
+                    return msg;
                 }
             }
+            
+            if (DefaultValue == null)
+                throw new Exception("No match and no default value set");
 
-            if (!matched)
-            {
-                var def = Mapping.FirstOrDefault(m => m[0].ToString() == "$default");
-
-                if (def != null)
-                {
-                    msg.SetValue(Destination, def[1]);
-                }
-                else
-                {
-                    msg.SetValue(Destination, null);
-                }
-            }
-
+            msg.SetValue(Destination.Get(msg), DefaultValue.Get(msg));
             return msg;
         }
     }

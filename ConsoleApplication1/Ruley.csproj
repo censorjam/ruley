@@ -80,6 +80,7 @@
     <Compile Include="Core\Filters\BlockFilter.cs" />
     <Compile Include="Core\Filters\BranchFilter.cs" />
     <Compile Include="Core\Filters\CalcFilter.cs" />
+    <Compile Include="Core\Filters\ChainFilter.cs" />
     <Compile Include="Core\Filters\ConditionalBaseFilter.cs" />
     <Compile Include="Core\Filters\CountFilter.cs" />
     <Compile Include="Core\Filters\DeleteFilter.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="Core\Filters\PassThroughFilter.cs" />
     <Compile Include="Core\Filters\PrevFilter.cs" />
     <Compile Include="Core\Filters\SlackFilter.cs" />
+    <Compile Include="Core\Outputs\Logger.cs" />
     <Compile Include="Core\RequiredAttribute.cs" />
     <Compile Include="Core\Property.cs" />
     <Compile Include="Core\Filters\TemplateFilter.cs" />

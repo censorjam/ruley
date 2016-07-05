@@ -26,7 +26,7 @@ namespace Ruley.Core.Inputs
             _timer.Dispose();
         }
 
-        public override void Validate()
+        public override void ValidateComposition()
         {
             if (Interval < 0)
                 throw new Exception("Interval cannot be negative");

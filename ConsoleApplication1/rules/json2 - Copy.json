@@ -17,13 +17,9 @@
         {
             "$type": "@conditional",
             "field": "f",
-            "match": "=",
-            "level": 100
-        },
-        {
-            "$type": "@addfield",
-            "destination": "id2",
-            "value": "{count}"
+            "match": "<",
+            "level": 100,
+            "destination": "cond"
         }
     ],
 

@@ -7,19 +7,19 @@ namespace Ruley.Core.Filters
     public class ConcatFilter : InlineFilter
     {
         [JsonProperty(Required = Required.Always)]
-        List<string> Fields { get; set; }
+        List<Property<string>> Fields { get; set; }
 
         [JsonProperty(Required = Required.Always)]
-        public string Destination { get; set; }
+        public Property<string> Destination { get; set; }
 
         public override ExpandoObject Apply(ExpandoObject msg)
         {
             string value = string.Empty;
             foreach (var field in Fields)
             {
-                value += msg.GetValue(Get<string>(field)).ToString();
+                value += msg.GetValue(field.Get(msg)).ToString();
             }
-            msg.SetValue(Get<string>(Destination), value);
+            msg.SetValue(Destination.Get(msg), value);
             return msg;
         }
     }

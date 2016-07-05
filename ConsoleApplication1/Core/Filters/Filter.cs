@@ -13,7 +13,6 @@ namespace Ruley.Core.Filters
             return Observable(source.Do(m =>
             {
                 Logger.Debug("Entering {0}", GetType().Name);
-                CurrentMsg = m;
             }));
         }
       

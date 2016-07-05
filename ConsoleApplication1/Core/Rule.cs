@@ -26,7 +26,7 @@ namespace Ruley.Core
             if (Outputs == null || Outputs.Count == 0)
                 throw new Exception("Rules require one or more outputs");
 
-            GetComponents().ForEach(f => f.Validate());
+            GetComponents().ForEach(f => f.ValidateComposition());
         }
 
         private List<Component> GetComponents()

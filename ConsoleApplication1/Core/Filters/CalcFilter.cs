@@ -7,17 +7,17 @@ namespace Ruley.Core.Filters
     public class CalcFilter : InlineFilter
     {
         public string Expression { get; set; }
-        public string Destination { get; set; }
+        public Property<string> Destination { get; set; }
 
         public override ExpandoObject Apply(ExpandoObject msg)
         {
             try
             {
-                var expression = Get<string>(Expression);
+                var expression = Get<string>(Expression, msg);
                 Logger.Debug("Expression is {0}", expression);
                 var result = new Expression(expression).Evaluate();
                 Logger.Debug("Result is {0}", result);
-                msg.SetValue(Get<string>(Destination), result);
+                msg.SetValue(Destination.Get(msg), result);
             }
             catch(Exception e)
             {

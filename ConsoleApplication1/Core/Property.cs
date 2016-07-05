@@ -23,10 +23,9 @@ namespace Ruley.Core
 
         private TemplatedPropertyGetter _getter;
 
-        //required for json serialization
         public Property()
         {
-        } 
+        }
 
         public Property(object value)
         {
@@ -36,7 +35,7 @@ namespace Ruley.Core
 
         public static implicit operator string(Property<T> d)
         {
-            return null;
+            throw new Exception("Implicit cast not allowed, use Get() method");
         }
 
         public static implicit operator Property<T>(string d)
@@ -46,7 +45,7 @@ namespace Ruley.Core
 
         public static implicit operator long(Property<T> d)
         {
-            return 0;
+            throw new Exception("Invalid cast");
         }
 
         public static implicit operator Property<T>(long d)
@@ -56,7 +55,7 @@ namespace Ruley.Core
 
         public static implicit operator double(Property<T> d)
         {
-            return 0;
+            throw new Exception("Invalid cast");
         }
 
         public static implicit operator Property<T>(double d)

@@ -4,11 +4,11 @@ namespace Ruley.Core.Filters
 {
     public class MessageBusPublisherFilter : InlineFilter
     {
-        public string Key { get; set; }
+        public Property<string> Key { get; set; }
 
         public override ExpandoObject Apply(ExpandoObject msg)
         {
-            RuleManager.MessageBus.Publish(Get<string>(Key), msg);
+            RuleManager.MessageBus.Publish(Key.Get(msg), msg);
             return msg;
         }
     }

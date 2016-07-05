@@ -13,8 +13,6 @@ namespace Ruley.Core.Outputs
             Logger = new Logger();
         }
 
-        protected ExpandoObject CurrentMsg;
-
         private bool _enabled = true;
         public bool Enabled
         {
@@ -30,14 +28,14 @@ namespace Ruley.Core.Outputs
         {
         }
 
-        public virtual void Validate()
+        public virtual void ValidateComposition()
         {
         }
 
-        protected T Get<T>(object value)
+        protected T Get<T>(object value, ExpandoObject msg)
         {
             var getter = new TemplatedPropertyGetter(value);
-            return getter.Get<T>(value, CurrentMsg);
+            return getter.Get<T>(value, msg);
         }
         
         public override string ToString()

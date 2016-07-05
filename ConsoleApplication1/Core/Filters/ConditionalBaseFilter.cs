@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Dynamic;
+using Newtonsoft.Json;
 
 namespace Ruley.Core.Filters
 {
     public abstract class ConditionalBaseFilter : InlineFilter
     {
+        [JsonProperty(Required = Required.Always)]
         public Property<string> Field { get; set; }
-        public Property<double> Level { get; set; }
+        [JsonProperty(Required = Required.Always)]
+        public Property<object> Level { get; set; }
+        [JsonProperty(Required = Required.Always)]
         public Property<string> Match { get; set; }
 
         protected bool RunMatch(ExpandoObject m)
@@ -22,8 +26,10 @@ namespace Ruley.Core.Filters
 
                 var value = Convert.ToDouble(f);
 
+                //value = f;
+
                 Console.WriteLine("getting level");
-                var level = Level.Get(m);
+                var level = Convert.ToDouble(Level.Get(m));
 
                 Console.WriteLine("value: {0}, level: {1}, match: {2}", value, level, Match);
 

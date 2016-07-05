@@ -61,19 +61,11 @@ namespace Ruley.Core.Outputs
 
             if (_type == PropertyType.Value)
             {
-                if (typeof (T) == typeof (double))
-                    return (T)(object)Convert.ToDouble(value);
-
                 return (T) value;
             }
 
             if (_type == PropertyType.Field)
             {
-                if (typeof (T) == typeof (double))
-                {
-                    return (T)(object)Convert.ToDouble(msg.GetValue(_fieldName));
-                }
-
                 return (T)msg.GetValue(_fieldName);
             }
 
