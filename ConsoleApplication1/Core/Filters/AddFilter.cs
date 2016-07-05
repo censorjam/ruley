@@ -11,7 +11,7 @@ namespace Ruley.Core.Filters
         [Required]
         public Property<object> Value { get; set; }
 
-        public override ExpandoObject Do(ExpandoObject msg)
+        public override ExpandoObject Apply(ExpandoObject msg)
         {
             var dest = Destination.Get(msg);
             var val = Value.Get(msg);

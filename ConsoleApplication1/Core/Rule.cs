@@ -66,7 +66,7 @@ namespace Ruley.Core
                 {
                     var f = filter;
                     stream = stream.Do(m => logger.Debug("Applying filter {0}", f.GetType()));
-                    stream = f.Apply(stream);
+                    stream = f.Extend(stream);
                 }
             }
 

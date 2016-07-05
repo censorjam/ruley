@@ -78,7 +78,9 @@
   <ItemGroup>
     <Compile Include="Core\Filters\AddFilter.cs" />
     <Compile Include="Core\Filters\BlockFilter.cs" />
+    <Compile Include="Core\Filters\BranchFilter.cs" />
     <Compile Include="Core\Filters\CalcFilter.cs" />
+    <Compile Include="Core\Filters\ConditionalBaseFilter.cs" />
     <Compile Include="Core\Filters\CountFilter.cs" />
     <Compile Include="Core\Filters\DeleteFilter.cs" />
     <Compile Include="Core\Filters\GroupByFilter.cs" />
@@ -86,6 +88,7 @@
     <Compile Include="Core\Filters\MessageBusFilter.cs" />
     <Compile Include="Core\Filters\PassThroughFilter.cs" />
     <Compile Include="Core\Filters\PrevFilter.cs" />
+    <Compile Include="Core\Filters\SlackFilter.cs" />
     <Compile Include="Core\RequiredAttribute.cs" />
     <Compile Include="Core\Property.cs" />
     <Compile Include="Core\Filters\TemplateFilter.cs" />
@@ -112,6 +115,7 @@
     <Compile Include="Core\Inputs\Input.cs" />
     <Compile Include="Core\Outputs\Output.cs" />
     <Compile Include="Core\Inputs\PollingInput.cs" />
+    <Compile Include="Core\Templating.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Core\Rule.cs" />

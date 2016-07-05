@@ -9,7 +9,7 @@ namespace Ruley.Core.Filters
         public string Expression { get; set; }
         public string Destination { get; set; }
 
-        public override ExpandoObject Do(ExpandoObject msg)
+        public override ExpandoObject Apply(ExpandoObject msg)
         {
             try
             {

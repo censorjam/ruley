@@ -10,7 +10,7 @@ namespace Ruley.Core.Filters
         [JsonProperty(Required = Required.Always)]
         public Property<string> Destination { get; set; }
 
-        public override ExpandoObject Do(ExpandoObject msg)
+        public override ExpandoObject Apply(ExpandoObject msg)
         {
             _count++;
             var destination = Destination.Get(msg);

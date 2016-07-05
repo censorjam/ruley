@@ -8,9 +8,9 @@ namespace Ruley.Core.Filters
         [JsonProperty(Required = Required.Always)]
         public string Destination { get; set; }
 
-        private ExpandoObject _prev = null;
+        private ExpandoObject _prev;
 
-        public override ExpandoObject Do(ExpandoObject msg)
+        public override ExpandoObject Apply(ExpandoObject msg)
         {
             msg.SetValue(Destination, _prev);
             _prev = msg.Clone();

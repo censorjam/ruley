@@ -3,18 +3,18 @@ using Newtonsoft.Json;
 
 namespace Ruley.Core.Filters
 {
-    //public class TemplateFilter : InlineFilter
-    //{
-    //    [JsonProperty(Required = Required.Always)]
-    //    public string Template { get; set; }
+    public class TemplateFilter : InlineFilter
+    {
+        [JsonProperty(Required = Required.Always)]
+        public Property<string> Template { get; set; }
 
-    //    [JsonProperty(Required = Required.Always)]
-    //    public string Destination { get; set; }
+        [JsonProperty(Required = Required.Always)]
+        public string Destination { get; set; }
 
-    //    protected override System.Dynamic.ExpandoObject Do(System.Dynamic.ExpandoObject msg)
-    //    {
-    //        msg.SetValue(Destination, Template);
-    //        return msg;
-    //    }
-    //}
+        public override System.Dynamic.ExpandoObject Apply(System.Dynamic.ExpandoObject msg)
+        {
+            msg.SetValue(Destination, Templater.ApplyTemplate(Template.Get(msg), msg));
+            return msg;
+        }
+    }
 }

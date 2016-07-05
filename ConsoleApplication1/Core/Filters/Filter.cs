@@ -8,7 +8,7 @@ namespace Ruley.Core.Filters
 {
     public abstract class Filter : Component
     {
-        public IObservable<ExpandoObject> Apply(IObservable<ExpandoObject> source)
+        public IObservable<ExpandoObject> Extend(IObservable<ExpandoObject> source)
         {
             return Observable(source.Do(m =>
             {

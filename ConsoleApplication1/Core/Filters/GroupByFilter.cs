@@ -24,7 +24,7 @@ namespace Ruley.Core.Filters
 
                     var f = filter;
                     source = source.Do(m => Logger.Debug("Chain > Applying filter {0}", f.GetType()));
-                    source = f.Apply(source);
+                    source = f.Extend(source);
                 }
             }
             return source;
@@ -52,7 +52,7 @@ namespace Ruley.Core.Filters
                 var filter = JsonConvert.DeserializeObject<FilterContainer>(serialize,
                     new JsonSerializerSettings() {TypeNameHandling = TypeNameHandling.Auto}).Filter;
 
-                filter.Apply(subject.AsObservable()).Subscribe(_subject);
+                filter.Extend(subject.AsObservable()).Subscribe(_subject);
                 i.Subscribe(subject);
             });
 

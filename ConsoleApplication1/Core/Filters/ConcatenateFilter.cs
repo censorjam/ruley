@@ -12,7 +12,7 @@ namespace Ruley.Core.Filters
         [JsonProperty(Required = Required.Always)]
         public string Destination { get; set; }
 
-        public override ExpandoObject Do(ExpandoObject msg)
+        public override ExpandoObject Apply(ExpandoObject msg)
         {
             string value = string.Empty;
             foreach (var field in Fields)

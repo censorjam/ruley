@@ -24,7 +24,7 @@ namespace Ruley.Core.Filters
             //todo
         }
 
-        public override ExpandoObject Do(ExpandoObject msg)
+        public override ExpandoObject Apply(ExpandoObject msg)
         {
             bool matched = false;
             foreach (var mapping in Mapping)

@@ -8,13 +8,13 @@ namespace Ruley.Core.Filters
     public abstract class InlineFilter : Filter
     {
         private readonly Subject<ExpandoObject> _subject = new Subject<ExpandoObject>();
-        public abstract ExpandoObject Do(ExpandoObject msg);
+        public abstract ExpandoObject Apply(ExpandoObject msg);
 
         protected override IObservable<ExpandoObject> Observable(IObservable<ExpandoObject> source)
         {
             source.Subscribe(m =>
             {
-                var next = Do(m);
+                var next = Apply(m);
                 if (next != null)
                 {
                     _subject.OnNext(next);

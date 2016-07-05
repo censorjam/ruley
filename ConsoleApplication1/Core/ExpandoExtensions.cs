@@ -28,7 +28,7 @@ namespace Ruley.Core
             }
             catch (Exception e)
             {
-                throw new Exception(string.Format("Failed to parse {0}", path));
+                throw new Exception(string.Format("GetValue failed with path '{0}'", path));
             }
 
             throw new Exception("broken");
@@ -46,6 +46,11 @@ namespace Ruley.Core
             ((IDictionary<string, object>)msg)[path] = value;
         }
 
+        public static bool HasErrors(this ExpandoObject msg)
+        {
+            return msg.HasProperty("$$errors");
+        }
+
         public static bool HasProperty(this ExpandoObject msg, string path)
         {
             return ((IDictionary<string, object>) msg).ContainsKey(path);
@@ -59,6 +64,21 @@ namespace Ruley.Core
         public static ExpandoObject Clone(this ExpandoObject msg)
         {
             return JsonConvert.DeserializeObject<ExpandoObject>(JsonConvert.SerializeObject(msg, new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.Auto }));
+        }
+
+        public static void AddError(this ExpandoObject msg, string errorMessage)
+        {
+            List<string> errors;
+            if (msg.HasProperty("$$errors"))
+            {
+                errors = (List<string>)msg.GetValue("$$errors");
+            }
+            else
+            {
+                errors = new List<string>();
+                msg.SetValue("$$errors", errors);
+            }
+            errors.Add(errorMessage);
         }
     }
 }

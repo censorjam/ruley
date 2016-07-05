@@ -4,7 +4,7 @@ namespace Ruley.Core.Filters
 {
     public class PassThroughFilter : InlineFilter
     {
-        public override ExpandoObject Do(ExpandoObject msg)
+        public override ExpandoObject Apply(ExpandoObject msg)
         {
             return msg;
         }
