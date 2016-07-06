@@ -17,7 +17,7 @@ namespace Ruley.Tests
         public void Parses_Plain_String()
         {
             var x = (Property<string>)"test_string";
-            Assert.AreEqual("test_string", x.Get(null));
+            Assert.AreEqual("test_string", x.Get(new Event()));
         }
     }
 

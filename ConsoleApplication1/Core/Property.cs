@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Dynamic;
-using Newtonsoft.Json;
-using Ruley.Core.Filters;
 using Ruley.Core.Outputs;
 
 namespace Ruley.Core
@@ -74,9 +71,12 @@ namespace Ruley.Core
             return new Property<T>(d);
         }
 
-        public T Get(Event e)
+        public T Get(Event @event)
         {
-            return _getter.Get<T>(Value, e.Data);
+            if (@event == null)
+                throw new ArgumentNullException("event");
+
+            return _getter.Get<T>(Value, @event.Data);
         }
     }
 }

@@ -8,7 +8,7 @@ namespace Ruley.Core.Filters
 {
     public class ChainFilter : Filter
     {
-        public List<Filter> Filters { get; set; }
+        public IEnumerable<Filter> Filters { get; set; }
 
         protected override IObservable<Event> Observable(IObservable<Event> source)
         {

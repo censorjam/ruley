@@ -33,6 +33,7 @@ namespace Ruley.Core
             _preprocessor.Alias("@slackf", "Ruley.Core.Filters.SlackFilter, Ruley");
             _preprocessor.Alias("@passthrough", "Ruley.Core.Filters.PassThroughFilter, Ruley");
             _preprocessor.Alias("@messagebuspublisher", "Ruley.Core.Filters.MessageBusPublisherFilter, Ruley");
+            _preprocessor.Alias("@branch", "Ruley.Core.Filters.BranchFilter, Ruley");
 
             _preprocessor.Alias("@console", "Ruley.Core.Outputs.ConsoleOutput, Ruley");
 

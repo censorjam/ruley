@@ -26,3 +26,26 @@ C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Tests\bin\Debug\SmartFormat.pdb
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Tests\obj\Debug\Ruley.Tests.csprojResolveAssemblyReference.cache
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Tests\obj\Debug\Ruley.Tests.dll
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Tests\obj\Debug\Ruley.Tests.pdb
+C:\Users\marc.jones\Desktop\GitHub\ruley\Ruley.Tests\bin\Debug\rules\json1.json
+C:\Users\marc.jones\Desktop\GitHub\ruley\Ruley.Tests\bin\Debug\rules\json2 - Copy.json
+C:\Users\marc.jones\Desktop\GitHub\ruley\Ruley.Tests\bin\Debug\Ruley.Tests.dll.config
+C:\Users\marc.jones\Desktop\GitHub\ruley\Ruley.Tests\bin\Debug\Ruley.Tests.dll
+C:\Users\marc.jones\Desktop\GitHub\ruley\Ruley.Tests\bin\Debug\Ruley.Tests.pdb
+C:\Users\marc.jones\Desktop\GitHub\ruley\Ruley.Tests\bin\Debug\Newtonsoft.Json.dll
+C:\Users\marc.jones\Desktop\GitHub\ruley\Ruley.Tests\bin\Debug\nunit.framework.dll
+C:\Users\marc.jones\Desktop\GitHub\ruley\Ruley.Tests\bin\Debug\Ruley.dll
+C:\Users\marc.jones\Desktop\GitHub\ruley\Ruley.Tests\bin\Debug\System.Reactive.Linq.dll
+C:\Users\marc.jones\Desktop\GitHub\ruley\Ruley.Tests\bin\Debug\NCalc.dll
+C:\Users\marc.jones\Desktop\GitHub\ruley\Ruley.Tests\bin\Debug\System.Reactive.Interfaces.dll
+C:\Users\marc.jones\Desktop\GitHub\ruley\Ruley.Tests\bin\Debug\System.Reactive.Core.dll
+C:\Users\marc.jones\Desktop\GitHub\ruley\Ruley.Tests\bin\Debug\SmartFormat.dll
+C:\Users\marc.jones\Desktop\GitHub\ruley\Ruley.Tests\bin\Debug\Ruley.pdb
+C:\Users\marc.jones\Desktop\GitHub\ruley\Ruley.Tests\bin\Debug\Newtonsoft.Json.xml
+C:\Users\marc.jones\Desktop\GitHub\ruley\Ruley.Tests\bin\Debug\nunit.framework.xml
+C:\Users\marc.jones\Desktop\GitHub\ruley\Ruley.Tests\bin\Debug\System.Reactive.Linq.xml
+C:\Users\marc.jones\Desktop\GitHub\ruley\Ruley.Tests\bin\Debug\System.Reactive.Interfaces.xml
+C:\Users\marc.jones\Desktop\GitHub\ruley\Ruley.Tests\bin\Debug\System.Reactive.Core.xml
+C:\Users\marc.jones\Desktop\GitHub\ruley\Ruley.Tests\bin\Debug\SmartFormat.pdb
+C:\Users\marc.jones\Desktop\GitHub\ruley\Ruley.Tests\obj\Debug\Ruley.Tests.csprojResolveAssemblyReference.cache
+C:\Users\marc.jones\Desktop\GitHub\ruley\Ruley.Tests\obj\Debug\Ruley.Tests.dll
+C:\Users\marc.jones\Desktop\GitHub\ruley\Ruley.Tests\obj\Debug\Ruley.Tests.pdb

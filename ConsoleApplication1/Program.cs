@@ -3,6 +3,14 @@ using Ruley.Core;
 
 namespace Ruley
 {
+    //todos
+    //todo end to end unit test with json file
+    //todo logging
+    //todo alias'
+    //todo sub folders with inherited global.js files
+    //todo auto validation with [required]
+    //todo [Default()] property attribute?
+
     public interface IRuleyLogger
     {
         void Info(string message);

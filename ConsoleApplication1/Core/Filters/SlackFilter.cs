@@ -13,16 +13,16 @@ namespace Ruley.Core.Filters
         public Property<string> Message { get; set; }
         public Property<string> Emoji { get; set; }
 
-        public override Event Apply(Event msg)
+        public override Event Apply(Event @event)
         {
             if (_slackClient == null)
-                _slackClient = new SlackClient(WebHookUrl);
+                _slackClient = new SlackClient(WebHookUrl.Get(@event));
 
             var payload = new Payload()
             {
-                Text = Message.Get(msg),
-                Username = Username.Get(msg),
-                Emoji = Emoji.Get(msg)
+                Text = Message.Get(@event),
+                Username = Username.Get(@event),
+                Emoji = Emoji.Get(@event)
             };
 
             try
@@ -35,7 +35,7 @@ namespace Ruley.Core.Filters
             }
 
             Logger.Debug(JsonConvert.SerializeObject(payload));
-            return msg;
+            return @event;
         }
     }
 }
