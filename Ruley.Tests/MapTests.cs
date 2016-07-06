@@ -111,7 +111,7 @@ namespace Ruley.Tests
                     new object[] {"a2", "b2"},
                 },
                 Destination = "field",
-                DefaultValue = "default"
+                Default = "default"
             };
 
             Event msg = new Event();

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Dynamic;
 
 namespace Ruley.Core.Filters
 {
@@ -16,7 +15,7 @@ namespace Ruley.Core.Filters
             var dest = Destination.Get(e);
             var val = Value.Get(e);
 
-            Console.WriteLine("dest = {0}, val = {1}", dest, val);
+            Logger.Debug("dest = {0}, val = {1}", dest, val);
 
             e.Data.SetValue(dest, val);
             return e;

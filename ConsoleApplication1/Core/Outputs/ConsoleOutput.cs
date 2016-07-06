@@ -6,9 +6,18 @@ namespace Ruley.Core.Outputs
 {
     public class ConsoleOutput : Output
     {
+        public Property<string> Template { get; set; }
+
         public override void Do(Event x)
         {
-            Console.WriteLine(JsonConvert.SerializeObject(x, Formatting.Indented));
+            if (Template != null)
+            {
+                Console.WriteLine(Templater.ApplyTemplate(Template.Get(x), x));
+            }
+            else
+            {
+                Console.WriteLine(JsonConvert.SerializeObject(x, Formatting.Indented));
+            }
         }
     }
 }

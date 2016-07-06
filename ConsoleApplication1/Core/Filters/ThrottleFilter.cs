@@ -19,39 +19,21 @@ namespace Ruley.Core.Filters
 
         protected override IObservable<Event> Observable(IObservable<Event> source)
         {
-            if (string.IsNullOrEmpty(Key))
+            source.Buffer(TimeSpan.FromMilliseconds(Interval)).Subscribe(x =>
             {
-                source.Buffer(TimeSpan.FromMilliseconds(Interval)).Subscribe(x => _subject.OnNext(Reduce(null, null, x)));
+                if (AllowEmpty || x.Count > 0)
+                    _subject.OnNext(Reduce(x));
+            });
 
-                return _subject.AsObservable();
-            }
-            else
-            {
-                source.GroupBy(m => m.Data.GetValue(Key)).Subscribe(i =>
-                {
-                    var keyField = Key;
-
-                    i.Buffer(TimeSpan.FromMilliseconds(Interval)).Subscribe(x =>
-                    {
-                        if (AllowEmpty || x.Count > 0)
-                        {
-                            _subject.OnNext(Reduce(keyField, i.Key, x));
-                        }
-                    });
-                });
-
-                return _subject.AsObservable();
-            }
+            return _subject.AsObservable();
         }
 
-        private Event Reduce(string keyField, object key, IList<Event> msgs)
+        private Event Reduce(IList<Event> msgs)
         {
             var count = msgs.Count;
             if (count == 0)
             {
-                msgs = new List<Event>();
-                msgs.Add(new Event());
-                //msgs[0].SetValue(keyField, key);
+                msgs = new List<Event> {new Event()};
             }
 
             msgs[0].Data.SetValue(CountField ?? "count", count);

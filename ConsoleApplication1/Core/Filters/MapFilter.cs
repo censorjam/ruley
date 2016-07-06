@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Dynamic;
-using System.Linq;
 using Newtonsoft.Json;
 
 namespace Ruley.Core.Filters
@@ -17,7 +15,7 @@ namespace Ruley.Core.Filters
         [JsonProperty(Required = Required.Always)]
         public List<object[]> Mapping { get; set; }
 
-        public Property<object> DefaultValue { get; set; }
+        public Property<object> Default { get; set; }
 
         public override void ValidateComposition()
         {
@@ -35,10 +33,10 @@ namespace Ruley.Core.Filters
                 }
             }
             
-            if (DefaultValue == null)
+            if (Default == null)
                 throw new Exception("No match and no default value set");
 
-            msg.Data.SetValue(Destination.Get(msg), DefaultValue.Get(msg));
+            msg.Data.SetValue(Destination.Get(msg), Default.Get(msg));
             return msg;
         }
     }

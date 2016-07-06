@@ -20,13 +20,13 @@ namespace Ruley.Core.Filters
 
         private Event DoFalse(Event e)
         {
-            Console.WriteLine("Executing false branch value");
+            Logger.Debug("Executing false branch value");
             return False.Apply(e);
         }
 
         private Event DoTrue(Event e)
         {
-            Console.WriteLine("Executing true branch");
+            Logger.Debug("Executing true branch");
             return True.Apply(e);
         }
     }

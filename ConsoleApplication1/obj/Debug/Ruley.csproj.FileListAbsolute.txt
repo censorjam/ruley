@@ -65,3 +65,4 @@ C:\Users\marc.jones\Desktop\GitHub\ruley\ConsoleApplication1\bin\Debug\System.Re
 C:\Users\marc.jones\Desktop\GitHub\ruley\ConsoleApplication1\bin\Debug\System.Reactive.Windows.Threading.xml
 C:\Users\marc.jones\Desktop\GitHub\ruley\ConsoleApplication1\obj\Debug\Ruley.dll
 C:\Users\marc.jones\Desktop\GitHub\ruley\ConsoleApplication1\obj\Debug\Ruley.pdb
+C:\Users\marc.jones\Desktop\GitHub\ruley\ConsoleApplication1\obj\Debug\Ruley.csprojResolveAssemblyReference.cache

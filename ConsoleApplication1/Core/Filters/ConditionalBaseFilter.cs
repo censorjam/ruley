@@ -20,7 +20,7 @@ namespace Ruley.Core.Filters
             {
                 IDictionary<string, object> e = m.Data;
                 
-                Console.WriteLine("casting value");
+                Logger.Debug("casting value");
                 var fieldName = Field.Get(m);
                 var f = m.Data.GetValue(fieldName);
 
@@ -28,10 +28,10 @@ namespace Ruley.Core.Filters
 
                 //value = f;
 
-                Console.WriteLine("getting level");
+                Logger.Debug("getting level");
                 var level = Convert.ToDouble(Level.Get(m));
 
-                Console.WriteLine("value: {0}, level: {1}, match: {2}", value, level, Match);
+                Logger.Debug("value: {0}, level: {1}, match: {2}", value, level, Match);
 
                 switch (Match.Get(m))
                 {
@@ -69,8 +69,8 @@ namespace Ruley.Core.Filters
             catch (Exception e)
             {
                // m.AddError(e.Message);
-                Console.WriteLine(e);
-                return true;
+                Logger.Error(e);
+                throw;
             }
             return true;
         }

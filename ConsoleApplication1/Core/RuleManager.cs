@@ -7,6 +7,7 @@ namespace Ruley.Core
     public class RuleManager
     {
         public static MessageBus MessageBus = new MessageBus();
+        public static GlobalScope GlobalVars = new GlobalScope();
 
         private readonly Dictionary<string, Rule> _rules = new Dictionary<string, Rule>();
         private readonly RuleProvider _ruleProvider;
@@ -32,8 +33,12 @@ namespace Ruley.Core
             _preprocessor.Alias("@count", "Ruley.Core.Filters.CountFilter, Ruley");
             _preprocessor.Alias("@slackf", "Ruley.Core.Filters.SlackFilter, Ruley");
             _preprocessor.Alias("@passthrough", "Ruley.Core.Filters.PassThroughFilter, Ruley");
-            _preprocessor.Alias("@messagebuspublisher", "Ruley.Core.Filters.MessageBusPublisherFilter, Ruley");
+            _preprocessor.Alias("@bus.out", "Ruley.Core.Filters.MessageBusPublisherFilter, Ruley");
             _preprocessor.Alias("@branch", "Ruley.Core.Filters.BranchFilter, Ruley");
+            _preprocessor.Alias("@replayField", "Ruley.Core.Filters.ReplayFieldFilter, Ruley");
+            _preprocessor.Alias("@regex", "Ruley.Core.Filters.RegexFilter, Ruley");
+
+            _preprocessor.Alias("@rabbitmq.in", "Ruley.RabbitMq.RabbitMqInput, Ruley.RabbitMq");
 
             _preprocessor.Alias("@console", "Ruley.Core.Outputs.ConsoleOutput, Ruley");
 

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ruley.Tests", "Ruley.Tests\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{1897EA20-525E-43F2-912F-92465AC0981B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ruley.RabbitMq", "Ruley.RabbitMq\Ruley.RabbitMq.csproj", "{2F94A81C-D6EC-42B3-9691-4389F34D6E1F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{1897EA20-525E-43F2-912F-92465AC0981B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1897EA20-525E-43F2-912F-92465AC0981B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1897EA20-525E-43F2-912F-92465AC0981B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F94A81C-D6EC-42B3-9691-4389F34D6E1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F94A81C-D6EC-42B3-9691-4389F34D6E1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F94A81C-D6EC-42B3-9691-4389F34D6E1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F94A81C-D6EC-42B3-9691-4389F34D6E1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Dynamic;
-using System.Reactive.Linq;
 using Newtonsoft.Json;
 
 namespace Ruley.Core.Filters
