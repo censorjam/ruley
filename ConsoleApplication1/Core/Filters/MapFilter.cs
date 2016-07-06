@@ -23,14 +23,14 @@ namespace Ruley.Core.Filters
         {
         }
 
-        public override ExpandoObject Apply(ExpandoObject msg)
+        public override Event Apply(Event msg)
         {
             foreach (var mapping in Mapping)
             {
                 var s = mapping[0].ToString();
-                if (msg.GetValue(Field.Get(msg)).ToString() == s)
+                if (msg.Data.GetValue(Field.Get(msg)).ToString() == s)
                 {
-                    msg.SetValue(Destination.Get(msg), mapping[1]);
+                    msg.Data.SetValue(Destination.Get(msg), mapping[1]);
                     return msg;
                 }
             }
@@ -38,7 +38,7 @@ namespace Ruley.Core.Filters
             if (DefaultValue == null)
                 throw new Exception("No match and no default value set");
 
-            msg.SetValue(Destination.Get(msg), DefaultValue.Get(msg));
+            msg.Data.SetValue(Destination.Get(msg), DefaultValue.Get(msg));
             return msg;
         }
     }

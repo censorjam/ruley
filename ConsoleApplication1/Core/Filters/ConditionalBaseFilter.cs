@@ -14,15 +14,15 @@ namespace Ruley.Core.Filters
         [JsonProperty(Required = Required.Always)]
         public Property<string> Match { get; set; }
 
-        protected bool RunMatch(ExpandoObject m)
+        protected bool RunMatch(Event m)
         {
             try
             {
-                IDictionary<string, object> e = m;
+                IDictionary<string, object> e = m.Data;
                 
                 Console.WriteLine("casting value");
                 var fieldName = Field.Get(m);
-                var f = m.GetValue(fieldName);
+                var f = m.Data.GetValue(fieldName);
 
                 var value = Convert.ToDouble(f);
 
@@ -68,7 +68,7 @@ namespace Ruley.Core.Filters
             }
             catch (Exception e)
             {
-                m.AddError(e.Message);
+               // m.AddError(e.Message);
                 Console.WriteLine(e);
                 return true;
             }

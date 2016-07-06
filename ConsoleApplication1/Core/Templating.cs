@@ -5,7 +5,7 @@ namespace Ruley.Core
 {
     public static class Templater
     {
-        public static string ApplyTemplate(string template, ExpandoObject msg)
+        public static string ApplyTemplate(string template, Event msg)
         {
             return Smart.Format(template, msg);
         }

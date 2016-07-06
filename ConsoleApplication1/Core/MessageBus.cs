@@ -1,16 +1,17 @@
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
+using Ruley.Core.Filters;
 
 namespace Ruley.Core
 {
     public class MessageBus
     {
-        public void Publish(string key, ExpandoObject msg)
+        public void Publish(string key, Event msg)
         {
             lock (_subs)
             {
-                List<Action<ExpandoObject>> subs;
+                List<Action<Event>> subs;
                 _subs.TryGetValue(key, out subs);
 
                 if (subs != null)
@@ -23,12 +24,12 @@ namespace Ruley.Core
             }
         }
 
-        private Dictionary<string, List<Action<ExpandoObject>>> _subs = new Dictionary<string, List<Action<ExpandoObject>>>();
-        public void Subscribe(string key, Action<ExpandoObject> handler)
+        private Dictionary<string, List<Action<Event>>> _subs = new Dictionary<string, List<Action<Event>>>();
+        public void Subscribe(string key, Action<Event> handler)
         {
             lock (_subs)
             {
-                List<Action<ExpandoObject>> subs;
+                List<Action<Event>> subs;
                 _subs.TryGetValue(key, out subs);
 
                 if (subs != null)
@@ -37,7 +38,7 @@ namespace Ruley.Core
                 }
                 else
                 {
-                    _subs.Add(key, new List<Action<ExpandoObject>>() { handler });
+                    _subs.Add(key, new List<Action<Event>>() { handler });
                 }
             }
         }

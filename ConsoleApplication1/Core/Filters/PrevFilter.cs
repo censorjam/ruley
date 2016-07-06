@@ -10,10 +10,10 @@ namespace Ruley.Core.Filters
 
         private ExpandoObject _prev;
 
-        public override ExpandoObject Apply(ExpandoObject msg)
+        public override Event Apply(Event msg)
         {
-            msg.SetValue(Destination, _prev);
-            _prev = msg.Clone();
+            msg.Data.SetValue(Destination, _prev);
+            _prev = msg.Data.Clone();
             _prev.DeleteValue(Destination);
             return msg;
         }

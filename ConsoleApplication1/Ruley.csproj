@@ -84,6 +84,7 @@
     <Compile Include="Core\Filters\ConditionalBaseFilter.cs" />
     <Compile Include="Core\Filters\CountFilter.cs" />
     <Compile Include="Core\Filters\DeleteFilter.cs" />
+    <Compile Include="Core\Event.cs" />
     <Compile Include="Core\Filters\GroupByFilter.cs" />
     <Compile Include="Core\Filters\InlineFilter.cs" />
     <Compile Include="Core\Filters\MessageBusFilter.cs" />

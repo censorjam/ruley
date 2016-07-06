@@ -12,15 +12,15 @@ namespace Ruley.Core.Filters
         [JsonProperty(Required = Required.Always)]
         public Property<string> Destination { get; set; }
 
-        public override ExpandoObject Apply(ExpandoObject msg)
+        public override Event Apply(Event ev)
         {
             string value = string.Empty;
             foreach (var field in Fields)
             {
-                value += msg.GetValue(field.Get(msg)).ToString();
+                value += ev.Data.GetValue(field.Get(ev)).ToString();
             }
-            msg.SetValue(Destination.Get(msg), value);
-            return msg;
+            ev.Data.SetValue(Destination.Get(ev), value);
+            return ev;
         }
     }
 }

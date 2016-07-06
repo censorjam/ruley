@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Dynamic;
 
 namespace Ruley.Core.Inputs
 {
@@ -8,7 +7,7 @@ namespace Ruley.Core.Inputs
         private int _number = 1;
         private Random r = new Random();
 
-        public override ExpandoObject GetNext()
+        public override Event GetNext()
         {
             string json;
             if (r.NextDouble() > 0.5)
@@ -23,7 +22,7 @@ namespace Ruley.Core.Inputs
             dynamic x = FromJson(json);
             _number = _number + 10;
             x.o.value = _number;
-            return x;
+            return new Event(x);
         }
     }
 }

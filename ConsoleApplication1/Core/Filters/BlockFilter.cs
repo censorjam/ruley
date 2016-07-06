@@ -4,7 +4,7 @@ namespace Ruley.Core.Filters
 {
     public class BlockFilter : InlineFilter
     {
-        public override ExpandoObject Apply(ExpandoObject msg)
+        public override Event Apply(Event msg)
         {
             return null;
         }

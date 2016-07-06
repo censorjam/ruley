@@ -10,7 +10,7 @@ namespace Ruley.Core.Outputs
         public Property<string> Subject { get; set; }
         public Property<string> Body { get; set; }
 
-        public override void Do(ExpandoObject x)
+        public override void Do(Event x)
         {
             var email = "--------------" + 
                 Environment.NewLine + "To: " + To + 

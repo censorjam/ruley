@@ -6,9 +6,9 @@ namespace Ruley.Core.Filters
 {
     public abstract class InlineFilter : Filter
     {
-        public abstract ExpandoObject Apply(ExpandoObject msg);
+        public abstract Event Apply(Event msg);
 
-        protected override IObservable<ExpandoObject> Observable(IObservable<ExpandoObject> source)
+        protected override IObservable<Event> Observable(IObservable<Event> source)
         {
             return source.Select(Apply);
         }

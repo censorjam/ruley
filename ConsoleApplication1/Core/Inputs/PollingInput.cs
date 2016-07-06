@@ -32,6 +32,6 @@ namespace Ruley.Core.Inputs
                 throw new Exception("Interval cannot be negative");
         }
 
-        public abstract ExpandoObject GetNext();
+        public abstract Event GetNext();
     }
 }

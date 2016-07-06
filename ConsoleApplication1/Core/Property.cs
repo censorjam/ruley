@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Dynamic;
 using Newtonsoft.Json;
+using Ruley.Core.Filters;
 using Ruley.Core.Outputs;
 
 namespace Ruley.Core
@@ -73,9 +74,9 @@ namespace Ruley.Core
             return new Property<T>(d);
         }
 
-        public T Get(ExpandoObject msg)
+        public T Get(Event e)
         {
-            return _getter.Get<T>(Value, msg);
+            return _getter.Get<T>(Value, e.Data);
         }
     }
 }

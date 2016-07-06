@@ -12,17 +12,17 @@ namespace Ruley.Core.Inputs
     public abstract class Input : Component
     {
         public abstract void Start();
-        private readonly Subject<ExpandoObject> _subject = new Subject<ExpandoObject>();
+        private readonly Subject<Event> _subject = new Subject<Event>();
         private readonly object _lock = new object();
 
-        public IObservable<ExpandoObject> Source
+        public IObservable<Event> Source
         {
             get { return _subject.AsObservable(); }
         }
 
-        public void OnNext(ExpandoObject next)
+        public void OnNext(Event next)
         {
-            ((IDictionary<string,object>)next)["$createdUtc"] = DateTime.UtcNow;
+            next.Created = DateTime.UtcNow;
             lock (_lock)
             {
                 _subject.OnNext(next);

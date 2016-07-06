@@ -15,9 +15,9 @@ namespace Ruley.Core.Filters
         public string CountField { get; set; }
         public bool AllowEmpty { get; set; }
 
-        private readonly Subject<ExpandoObject> _subject = new Subject<ExpandoObject>();
+        private readonly Subject<Event> _subject = new Subject<Event>();
 
-        protected override IObservable<ExpandoObject> Observable(IObservable<ExpandoObject> source)
+        protected override IObservable<Event> Observable(IObservable<Event> source)
         {
             if (string.IsNullOrEmpty(Key))
             {
@@ -27,7 +27,7 @@ namespace Ruley.Core.Filters
             }
             else
             {
-                source.GroupBy(m => m.GetValue(Key)).Subscribe(i =>
+                source.GroupBy(m => m.Data.GetValue(Key)).Subscribe(i =>
                 {
                     var keyField = Key;
 
@@ -44,17 +44,17 @@ namespace Ruley.Core.Filters
             }
         }
 
-        private ExpandoObject Reduce(string keyField, object key, IList<ExpandoObject> msgs)
+        private Event Reduce(string keyField, object key, IList<Event> msgs)
         {
             var count = msgs.Count;
             if (count == 0)
             {
-                msgs = new List<ExpandoObject>();
-                msgs.Add(new ExpandoObject());
+                msgs = new List<Event>();
+                msgs.Add(new Event());
                 //msgs[0].SetValue(keyField, key);
             }
 
-            msgs[0].SetValue(CountField ?? "count", count);
+            msgs[0].Data.SetValue(CountField ?? "count", count);
             return msgs[0];
         }
     }

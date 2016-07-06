@@ -13,7 +13,7 @@ namespace Ruley.Core.Filters
         public Property<string> Message { get; set; }
         public Property<string> Emoji { get; set; }
 
-        public override ExpandoObject Apply(ExpandoObject msg)
+        public override Event Apply(Event msg)
         {
             if (_slackClient == null)
                 _slackClient = new SlackClient(WebHookUrl);

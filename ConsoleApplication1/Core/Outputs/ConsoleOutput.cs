@@ -6,7 +6,7 @@ namespace Ruley.Core.Outputs
 {
     public class ConsoleOutput : Output
     {
-        public override void Do(ExpandoObject x)
+        public override void Do(Event x)
         {
             Console.WriteLine(JsonConvert.SerializeObject(x, Formatting.Indented));
         }

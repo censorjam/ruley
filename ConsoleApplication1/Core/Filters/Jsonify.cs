@@ -14,7 +14,7 @@ namespace Ruley.Core.Filters
         [JsonProperty(Required = Required.Always)]
         public string Destination { get; set; }
 
-        public override ExpandoObject Apply(ExpandoObject msg)
+        public override Event Apply(Event msg)
         {
             throw new NotImplementedException();
         }

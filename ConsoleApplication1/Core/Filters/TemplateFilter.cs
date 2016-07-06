@@ -11,9 +11,9 @@ namespace Ruley.Core.Filters
         [JsonProperty(Required = Required.Always)]
         public string Destination { get; set; }
 
-        public override System.Dynamic.ExpandoObject Apply(System.Dynamic.ExpandoObject msg)
+        public override Event Apply(Event msg)
         {
-            msg.SetValue(Destination, Templater.ApplyTemplate(Template.Get(msg), msg));
+            msg.Data.SetValue(Destination, Templater.ApplyTemplate(Template.Get(msg), msg));
             return msg;
         }
     }

@@ -11,15 +11,15 @@ namespace Ruley.Core.Filters
         [Required]
         public Property<object> Value { get; set; }
 
-        public override ExpandoObject Apply(ExpandoObject msg)
+        public override Event Apply(Event e)
         {
-            var dest = Destination.Get(msg);
-            var val = Value.Get(msg);
+            var dest = Destination.Get(e);
+            var val = Value.Get(e);
 
             Console.WriteLine("dest = {0}, val = {1}", dest, val);
 
-            msg.SetValue(dest, val);
-            return msg;
+            e.Data.SetValue(dest, val);
+            return e;
         }
     }
 }

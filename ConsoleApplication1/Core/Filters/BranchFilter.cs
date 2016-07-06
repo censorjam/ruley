@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Dynamic;
 
 namespace Ruley.Core.Filters
 {
@@ -8,7 +7,7 @@ namespace Ruley.Core.Filters
         public InlineFilter True { get; set; }
         public InlineFilter False { get; set; }
 
-        public override ExpandoObject Apply(ExpandoObject x)
+        public override Event Apply(Event x)
         {
             True = True ?? new BlockFilter();
             False = False ?? new BlockFilter();
@@ -19,16 +18,16 @@ namespace Ruley.Core.Filters
             return next;
         }
 
-        private ExpandoObject DoFalse(ExpandoObject m)
+        private Event DoFalse(Event e)
         {
             Console.WriteLine("Executing false branch value");
-            return False.Apply(m);
+            return False.Apply(e);
         }
 
-        private ExpandoObject DoTrue(ExpandoObject m)
+        private Event DoTrue(Event e)
         {
             Console.WriteLine("Executing true branch");
-            return True.Apply(m);
+            return True.Apply(e);
         }
     }
 }

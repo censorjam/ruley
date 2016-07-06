@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Dynamic;
 using Newtonsoft.Json;
+using Ruley.Core.Filters;
 using SmartFormat;
 
 namespace Ruley.Core.Outputs
@@ -32,10 +33,10 @@ namespace Ruley.Core.Outputs
         {
         }
 
-        protected T Get<T>(object value, ExpandoObject msg)
+        protected T Get<T>(object value, Event msg)
         {
             var getter = new TemplatedPropertyGetter(value);
-            return getter.Get<T>(value, msg);
+            return getter.Get<T>(value, msg.Data);
         }
         
         public override string ToString()

@@ -8,11 +8,11 @@ namespace Ruley.Core.Filters
         [JsonProperty(Required = Required.Always)]
         public Property<string> Destination { get; set; }
 
-        public override ExpandoObject Apply(ExpandoObject msg)
+        public override Event Apply(Event ev)
         {
-            var match = RunMatch(msg);
-            msg.SetValue(Destination.Get(msg), match);
-            return msg;
+            var match = RunMatch(ev);
+            ev.Data.SetValue(Destination.Get(ev), match);
+            return ev;
         }
     }
 }

@@ -10,7 +10,7 @@ namespace Ruley.Core.Filters
     {
         public List<Filter> Filters { get; set; }
 
-        protected override IObservable<ExpandoObject> Observable(IObservable<ExpandoObject> source)
+        protected override IObservable<Event> Observable(IObservable<Event> source)
         {
             Logger = new Logger();//hack
 

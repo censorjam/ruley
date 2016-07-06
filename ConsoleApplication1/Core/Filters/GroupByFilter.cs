@@ -16,12 +16,12 @@ namespace Ruley.Core.Filters
         public string Key { get; set; }
         public Filter Filter { get; set; }
 
-        private Subject<ExpandoObject> _subject = new Subject<ExpandoObject>();
-        protected override IObservable<ExpandoObject> Observable(IObservable<ExpandoObject> source)
+        private Subject<Event> _subject = new Subject<Event>();
+        protected override IObservable<Event> Observable(IObservable<Event> source)
         {
-            source.GroupBy(m => m.GetValue(Key)).Subscribe(i =>
+            source.GroupBy(m => m.Data.GetValue(Key)).Subscribe(i =>
             {
-                var subject = new Subject<ExpandoObject>();
+                var subject = new Subject<Event>();
                 var serialize = JsonConvert.SerializeObject(new FilterContainer() { Filter = Filter }, new JsonSerializerSettings() {TypeNameHandling = TypeNameHandling.Auto});
 
                 var filter = JsonConvert.DeserializeObject<FilterContainer>(serialize,

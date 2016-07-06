@@ -6,7 +6,7 @@ namespace Ruley.Core.Filters
     {
         public Property<string> Key { get; set; }
 
-        public override ExpandoObject Apply(ExpandoObject msg)
+        public override Event Apply(Event msg)
         {
             RuleManager.MessageBus.Publish(Key.Get(msg), msg);
             return msg;
