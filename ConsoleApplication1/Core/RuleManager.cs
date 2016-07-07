@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace Ruley.Core
 {
@@ -14,6 +15,17 @@ namespace Ruley.Core
         private readonly Preprocessor _preprocessor;
 
         private List<string> _ignoreFile = new List<string>() { "global" };
+
+
+        public void Add(Rule rule)
+        {
+            _rules.Add("test123", rule);
+        }
+
+        public List<string> GetRuleNames()
+        {
+            return _rules.Keys.ToList();
+        }
 
         public RuleManager()
         {

@@ -20,9 +20,10 @@ namespace Ruley.RabbitMq
         public override void Start()
         {
             var _bus = RabbitHutch.CreateBus(ConnectionString);
-            var queue = _bus.Advanced.QueueDeclare(QueueName);
-            var exchange = _bus.Advanced.ExchangeDeclare(ExchangeName, ExchangeType, true, true);
+            var queue = _bus.Advanced.QueueDeclare(QueueName, false, true, false, true);
+            var exchange = _bus.Advanced.ExchangeDeclare(ExchangeName, ExchangeType);
 
+            //todo currently only works with topic
             _bus.Advanced.Bind(exchange, queue, "#");
             _bus.Advanced.Consume(queue, (x, b, c) =>
             {
