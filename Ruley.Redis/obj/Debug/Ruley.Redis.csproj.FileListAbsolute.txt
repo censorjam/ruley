@@ -1,0 +1,6 @@
+C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Redis\bin\Debug\Ruley.Redis.exe.config
+C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Redis\bin\Debug\Ruley.Redis.exe
+C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Redis\bin\Debug\Ruley.Redis.pdb
+C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Redis\obj\Debug\Ruley.Redis.csprojResolveAssemblyReference.cache
+C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Redis\obj\Debug\Ruley.Redis.exe
+C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Redis\obj\Debug\Ruley.Redis.pdb

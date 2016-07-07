@@ -3,18 +3,47 @@
     "debug": false,
 
     "input": {
-        "$type": "Ruley.Core.Inputs.TestInput, Ruley",
-        "interval": 300
+        "$type": "Ruley.Core.Inputs.HttpPollerInput, Ruley",
+        "url": "http://localhost:15672/api/aliveness-test/test",
+        "username": "guest",
+        "password": "guest",
+        "authentication": "basic",
+        "interval": 3000
     },
 
     "filters": [
-        
+        {
+            "$type": "@map",
+            "field": "StatusCode",
+            "replace": true,
+            "mapping": [
+                { "test": "teste2" }
+                // [ 200, [ [ "Status", "Healthy" ], [ "Critical", false ] ] ],
+                // [ "default", [ [ "Status", "Healthy" ], [ "Critical", false ] ] ]
+            ]
+        },
+        {
+            "$type": "@distinctvalue",
+            "field": "StatusCode"
+        },
+        {
+            "$type": "@skip",
+            "count": 1
+        }
+        //  {
+        //     "$type": "@replace",
+        //    "map": [
+        //       [ "ServiceType", "RabbitMq" ],
+        //      [ "StatusText", "{Status}" ],
+        //      [ "Critical", true ]
+        //  ]
+        // }
     ],
-
     "outputs": [
         {
             "$type": "@console",
-            "enabled": false
+            "enabled": true,
+            "message": "RabbitMq is now {Status}"
         }
     ]
 }

@@ -9,7 +9,7 @@ namespace Ruley.Core.Filters
 
         public override Event Apply(Event x)
         {
-            True = True ?? new BlockFilter();
+            True = True ?? new PassThroughFilter();
             False = False ?? new BlockFilter();
 
             var match = RunMatch(x);

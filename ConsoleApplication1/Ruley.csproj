@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{F7A010E3-1777-4B1D-9787-2DB46549A03D}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Ruley</RootNamespace>
     <AssemblyName>Ruley</AssemblyName>
@@ -48,6 +48,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Reactive.Core, Version=3.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Reactive.Core.3.0.0\lib\net45\System.Reactive.Core.dll</HintPath>
       <Private>True</Private>
@@ -85,6 +86,7 @@
     <Compile Include="Core\Filters\CountFilter.cs" />
     <Compile Include="Core\Filters\DeleteFilter.cs" />
     <Compile Include="Core\Event.cs" />
+    <Compile Include="Core\Filters\DistinctValue.cs" />
     <Compile Include="Core\Filters\FilterExtensions.cs" />
     <Compile Include="Core\Filters\FilterSerializationWrapper.cs" />
     <Compile Include="Core\Filters\GroupByFilter.cs" />
@@ -94,6 +96,7 @@
     <Compile Include="Core\Filters\PrevFilter.cs" />
     <Compile Include="Core\Filters\RegexFilter.cs" />
     <Compile Include="Core\Filters\ReplayFieldFilter.cs" />
+    <Compile Include="Core\Filters\SkipFIlter.cs" />
     <Compile Include="Core\Filters\SlackFilter.cs" />
     <Compile Include="Core\Outputs\Logger.cs" />
     <Compile Include="Core\RequiredAttribute.cs" />
@@ -136,9 +139,7 @@
     </None>
     <None Include="packages.config" />
     <None Include="rules\global.json" />
-    <None Include="rules\json2 - Copy.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <None Include="rules\json2 - Copy.json" />
     <None Include="rules\json2.json" />
     <None Include="rules\_empty.json" />
   </ItemGroup>

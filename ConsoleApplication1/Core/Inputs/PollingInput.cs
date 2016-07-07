@@ -16,7 +16,7 @@ namespace Ruley.Core.Inputs
         {
             _timer = new Timer(state =>
             {
-                OnNext(GetNext());
+                OnTick();
             });
             _timer.Change(0, Interval);
         }
@@ -32,6 +32,6 @@ namespace Ruley.Core.Inputs
                 throw new Exception("Interval cannot be negative");
         }
 
-        public abstract Event GetNext();
+        public abstract void OnTick();
     }
 }

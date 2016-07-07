@@ -49,6 +49,8 @@ namespace Ruley.Core
             _preprocessor.Alias("@branch", "Ruley.Core.Filters.BranchFilter, Ruley");
             _preprocessor.Alias("@replayField", "Ruley.Core.Filters.ReplayFieldFilter, Ruley");
             _preprocessor.Alias("@regex", "Ruley.Core.Filters.RegexFilter, Ruley");
+            _preprocessor.Alias("@distinctvalue", "Ruley.Core.Filters.DistinctValueFilter, Ruley");
+            _preprocessor.Alias("@skip", "Ruley.Core.Filters.SkipFilter, Ruley");
 
             _preprocessor.Alias("@rabbitmq.in", "Ruley.RabbitMq.RabbitMqInput, Ruley.RabbitMq");
 

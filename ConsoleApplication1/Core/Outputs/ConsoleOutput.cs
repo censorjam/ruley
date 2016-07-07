@@ -6,13 +6,13 @@ namespace Ruley.Core.Outputs
 {
     public class ConsoleOutput : Output
     {
-        public Property<string> Template { get; set; }
+        public Property<string> Message { get; set; }
 
         public override void Do(Event x)
         {
-            if (Template != null)
+            if (Message != null)
             {
-                Console.WriteLine(Templater.ApplyTemplate(Template.Get(x), x));
+                Console.WriteLine(Templater.ApplyTemplate(Message.Get(x), x));
             }
             else
             {
