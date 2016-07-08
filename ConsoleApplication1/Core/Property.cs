@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Dynamic;
 using Ruley.Core.Outputs;
 
 namespace Ruley.Core

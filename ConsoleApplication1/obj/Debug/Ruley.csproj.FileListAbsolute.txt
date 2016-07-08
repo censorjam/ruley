@@ -39,10 +39,11 @@ C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\bin\Debug\System.R
 C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\bin\Debug\System.Reactive.Windows.Threading.xml
 C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\obj\Debug\Ruley.pdb
 C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\obj\Debug\Ruley.csprojResolveAssemblyReference.cache
-C:\Users\marc.jones\Desktop\GitHub\ruley\ConsoleApplication1\bin\Debug\rules\json1.json
-C:\Users\marc.jones\Desktop\GitHub\ruley\ConsoleApplication1\bin\Debug\rules\json2 - Copy.json
-C:\Users\marc.jones\Desktop\GitHub\ruley\ConsoleApplication1\bin\Debug\Ruley.dll.config
-C:\Users\marc.jones\Desktop\GitHub\ruley\ConsoleApplication1\bin\Debug\Ruley.dll
+C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\bin\Debug\Ruley.exe.config
+C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\bin\Debug\Ruley.exe
+C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\obj\Debug\Ruley.exe
+C:\Users\marc.jones\Desktop\GitHub\ruley\ConsoleApplication1\bin\Debug\Ruley.exe.config
+C:\Users\marc.jones\Desktop\GitHub\ruley\ConsoleApplication1\bin\Debug\Ruley.exe
 C:\Users\marc.jones\Desktop\GitHub\ruley\ConsoleApplication1\bin\Debug\Ruley.pdb
 C:\Users\marc.jones\Desktop\GitHub\ruley\ConsoleApplication1\bin\Debug\NCalc.dll
 C:\Users\marc.jones\Desktop\GitHub\ruley\ConsoleApplication1\bin\Debug\Newtonsoft.Json.dll
@@ -59,8 +60,7 @@ C:\Users\marc.jones\Desktop\GitHub\ruley\ConsoleApplication1\bin\Debug\System.Re
 C:\Users\marc.jones\Desktop\GitHub\ruley\ConsoleApplication1\bin\Debug\System.Reactive.Linq.xml
 C:\Users\marc.jones\Desktop\GitHub\ruley\ConsoleApplication1\bin\Debug\System.Reactive.PlatformServices.xml
 C:\Users\marc.jones\Desktop\GitHub\ruley\ConsoleApplication1\bin\Debug\System.Reactive.Windows.Threading.xml
-C:\Users\marc.jones\Desktop\GitHub\ruley\ConsoleApplication1\obj\Debug\Ruley.dll
+C:\Users\marc.jones\Desktop\GitHub\ruley\ConsoleApplication1\obj\Debug\Ruley.exe
 C:\Users\marc.jones\Desktop\GitHub\ruley\ConsoleApplication1\obj\Debug\Ruley.pdb
-C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\bin\Debug\Ruley.exe.config
-C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\bin\Debug\Ruley.exe
-C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\obj\Debug\Ruley.exe
+C:\Users\marc.jones\Desktop\GitHub\ruley\ConsoleApplication1\bin\Debug\rules\json3.json
+C:\Users\marc.jones\Desktop\GitHub\ruley\ConsoleApplication1\obj\Debug\Ruley.csprojResolveAssemblyReference.cache

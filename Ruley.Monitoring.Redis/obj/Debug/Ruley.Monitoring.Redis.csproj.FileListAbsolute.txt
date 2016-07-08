@@ -4,3 +4,5 @@ C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Monitoring.Redis\bin\Debug\Ruley
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Monitoring.Redis\obj\Debug\Ruley.Monitoring.Redis.csprojResolveAssemblyReference.cache
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Monitoring.Redis\obj\Debug\Ruley.Monitoring.Redis.exe
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Monitoring.Redis\obj\Debug\Ruley.Monitoring.Redis.pdb
+C:\Users\marc.jones\Desktop\GitHub\ruley\Ruley.Monitoring.Redis\obj\Debug\Ruley.Monitoring.Redis.csprojResolveAssemblyReference.cache
+C:\Users\marc.jones\Desktop\GitHub\ruley\Ruley.Monitoring.Redis\obj\Debug\Ruley.Monitoring.Redis.exe

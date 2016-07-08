@@ -14,18 +14,22 @@ namespace Ruley.Core.Inputs
         public abstract void Start();
         private readonly Subject<Event> _subject = new Subject<Event>();
         private readonly object _lock = new object();
+        public ExpandoObject Properties { get; set; }
 
         public IObservable<Event> Source
         {
             get { return _subject.AsObservable(); }
         }
 
-        public void OnNext(Event next)
+        public void OnNext(ExpandoObject next)
         {
-            next.Created = DateTime.UtcNow;
+            dynamic n = next;
+            n.Properties = Properties;
+            var ev = new Event(n) {Created = DateTime.UtcNow};
+
             lock (_lock)
             {
-                _subject.OnNext(next);
+                _subject.OnNext(ev);
             }
         }
 

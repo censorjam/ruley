@@ -1,0 +1,28 @@
+﻿{
+    "debug": false,
+
+    "input": {
+        "$type": "@rabbitmq.in",
+        "connectionString": "host=t1apmon001.spreadex.com;persistentMessages=false;username=rabbitadmin;password=qwe123;product=Ruley",
+        "queueName": "test",
+        "exchangeName": "Logs",
+        "exchangeType": "topic"
+    },
+
+    "filters": [
+        {
+            "$type": "@map",
+            "field": "level",
+            "match": "=",
+            "level": "error"
+        }
+    ],
+
+    "outputs": [
+        {
+            "$type": "@console",
+            "enabled": true,
+            "message": "{appName}: {level} - {message}"
+        }
+    ]
+}

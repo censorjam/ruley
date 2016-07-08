@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Reactive.Linq;
 using Ruley.Core.Filters;
 using Ruley.Core.Inputs;
@@ -17,6 +18,7 @@ namespace Ruley.Core
         public List<Output> Outputs { get; set; }
         public List<Filter> Filters { get; set; }
         public event Action<Exception> OnError;
+        public ExpandoObject Properties { get; set; }
 
         internal void Validate()
         {
@@ -54,6 +56,7 @@ namespace Ruley.Core
             });
 
             var stream = Input.Source;
+            Input.Properties = Properties;
 
             stream.Subscribe(o => { /*noop*/ }, e =>
             {

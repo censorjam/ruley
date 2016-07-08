@@ -62,6 +62,10 @@
       <Project>{F7A010E3-1777-4B1D-9787-2DB46549A03D}</Project>
       <Name>Ruley</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Ruley.RabbitMq\Ruley.RabbitMq.csproj">
+      <Project>{2f94a81c-d6ec-42b3-9691-4389f34d6e1f}</Project>
+      <Name>Ruley.RabbitMq</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

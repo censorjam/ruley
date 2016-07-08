@@ -8,14 +8,10 @@ namespace Ruley.Core
     public class RuleManager
     {
         public static MessageBus MessageBus = new MessageBus();
-        public static GlobalScope GlobalVars = new GlobalScope();
-
         private readonly Dictionary<string, Rule> _rules = new Dictionary<string, Rule>();
         private readonly RuleProvider _ruleProvider;
         private readonly Preprocessor _preprocessor;
-
         private List<string> _ignoreFile = new List<string>() { "global" };
-
 
         public void Add(Rule rule)
         {

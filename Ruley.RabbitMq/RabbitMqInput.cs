@@ -35,7 +35,7 @@ namespace Ruley.RabbitMq
                 var s = Encoding.UTF8.GetString(x);
                 var expandoObjectConverter = new ExpandoObjectConverter();
                 var o = JsonConvert.DeserializeObject<ExpandoObject>(s, expandoObjectConverter);
-                OnNext(new Event(o));
+                OnNext(o);
             });
         }
 

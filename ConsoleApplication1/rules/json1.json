@@ -1,10 +1,14 @@
 ﻿{
-    "name": "test rule",
-    "debug": false,
+    "properties": {
+        "Host": "localhost",
+        "Port": 15672,
+        "VHost": "events",
+        "ServiceType": "rabbitmq"
+    },
 
     "input": {
         "$type": "Ruley.Core.Inputs.HttpPollerInput, Ruley",
-        "url": "http://localhost:15672/api/aliveness-test/test",
+        "url": "http://{Properties.Host}:{Properties.Port}/api/aliveness-test/{Properties.VHost}",
         "username": "guest",
         "password": "guest",
         "authentication": "basic",
@@ -15,35 +19,32 @@
         {
             "$type": "@map",
             "field": "StatusCode",
-            "replace": true,
+            "destination": "Status",
             "mapping": [
-                { "test": "teste2" }
-                // [ 200, [ [ "Status", "Healthy" ], [ "Critical", false ] ] ],
-                // [ "default", [ [ "Status", "Healthy" ], [ "Critical", false ] ] ]
-            ]
+                [ 200, "Healthy" ]
+            ],
+            "default": "Unhealthy"
         },
         {
             "$type": "@distinctvalue",
-            "field": "StatusCode"
+            "field": "Status"
         },
         {
-            "$type": "@skip",
-            "count": 1
+            "$type": "@addfield",
+            "destination": "ServiceType",
+            "value": "{Properties.ServiceType}"
         }
         //  {
-        //     "$type": "@replace",
-        //    "map": [
-        //       [ "ServiceType", "RabbitMq" ],
-        //      [ "StatusText", "{Status}" ],
-        //      [ "Critical", true ]
-        //  ]
+        //     "$type": "@skip",
+        //    "count": 1
         // }
     ],
+
     "outputs": [
         {
             "$type": "@console",
             "enabled": true,
-            "message": "RabbitMq is now {Status}"
+            // "message": "RabbitMq is now {Status}"
         }
     ]
 }

@@ -1,6 +1,4 @@
-﻿using System.Dynamic;
-
-namespace Ruley.Core.Filters
+﻿namespace Ruley.Core.Filters
 {
     public class MessageBusPublisherFilter : InlineFilter
     {
@@ -8,7 +6,7 @@ namespace Ruley.Core.Filters
 
         public override Event Apply(Event msg)
         {
-            RuleManager.MessageBus.Publish(Key.Get(msg), msg);
+            RuleManager.MessageBus.Publish(Key.Get(msg), msg.Data);
             return msg;
         }
     }
