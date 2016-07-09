@@ -1,28 +1,35 @@
 ﻿{
     "debug": false,
 
-    "input": {
-        "$type": "@rabbitmq.in",
-        "connectionString": "host=t1apmon001.spreadex.com;persistentMessages=false;username=rabbitadmin;password=qwe123;product=Ruley",
-        "queueName": "test",
-        "exchangeName": "Logs",
-        "exchangeType": "topic"
-    },
-
-    "filters": [
-        {
-            "$type": "@map",
-            "field": "level",
-            "match": "=",
-            "level": "error"
-        }
+    "parameters": [
+        { "host": "localhost", "port": 15672 },
+        { "host": "d1rmq001", "port": 15672 }
     ],
 
-    "outputs": [
-        {
-            "$type": "@console",
-            "enabled": true,
-            "message": "{appName}: {level} - {message}"
-        }
-    ]
+    "template": {
+        "input": {
+            "$type": "@rabbitmq.in",
+            "connectionString": "host=t1apmon001.spreadex.com;persistentMessages=false;username=rabbitadmin;password=qwe123;product=Ruley",
+            "queueName": "test",
+            "exchangeName": "Logs",
+            "exchangeType": "topic"
+        },
+
+        "filters": [
+            //{
+               // "$type": "@map",
+               // "field": "level",
+               // "match": "=",
+               // "level": "error"
+            //}
+        ],
+
+        "outputs": [
+            {
+                "$type": "@console",
+                "enabled": true,
+                "message": "{appName}: {level} - {message}"
+            }
+        ]
+    }
 }

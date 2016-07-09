@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
+using Ruley.Core.Filters;
 
 namespace Ruley.Core
 {
@@ -33,13 +35,15 @@ namespace Ruley.Core
             return null;
         }
 
-        public Rule Create(string filename)
+        public RuleSet Create(string filename)
         {
             Console.WriteLine("Loading rule ({0})", filename);
             var json = LoadJson(filename);
             json = _preprocessor.Process(json);
 
-            Rule rule = JsonConvert.DeserializeObject<Rule>(json, new JsonSerializerSettings() {TypeNameHandling = TypeNameHandling.Auto});
+            RuleSet rule = JsonConvert.DeserializeObject<RuleSet>(json, 
+                new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.Auto, NullValueHandling = NullValueHandling.Include, 
+                    Converters = new List<JsonConverter>() { new PropertyConverter() }});
             rule.FileName = filename;
             rule.Validate();
             return rule;

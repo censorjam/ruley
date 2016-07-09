@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace Ruley.Core.Inputs
 {
-    public abstract class PollingInput : Input
+    public class PollingInput : Input
     {
         [JsonProperty(Required = Required.Always)]
         public int Interval { get; set; }
@@ -32,6 +32,9 @@ namespace Ruley.Core.Inputs
                 throw new Exception("Interval cannot be negative");
         }
 
-        public abstract void OnTick();
+        public virtual void OnTick()
+        {
+            OnNext(new ExpandoObject());
+        }
     }
 }

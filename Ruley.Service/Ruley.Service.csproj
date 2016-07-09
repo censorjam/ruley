@@ -40,6 +40,10 @@
     <Reference Include="Nancy.Hosting.Self">
       <HintPath>..\packages\Nancy.Hosting.Self.1.4.1\lib\net40\Nancy.Hosting.Self.dll</HintPath>
     </Reference>
+    <Reference Include="StackExchange.Redis, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\StackExchange.Redis.1.1.603\lib\net45\StackExchange.Redis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -65,6 +69,10 @@
     <ProjectReference Include="..\Ruley.RabbitMq\Ruley.RabbitMq.csproj">
       <Project>{2f94a81c-d6ec-42b3-9691-4389f34d6e1f}</Project>
       <Name>Ruley.RabbitMq</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruley.Redis\Ruley.Redis.csproj">
+      <Project>{c2386c3d-8edf-457a-8d5c-ca2a140c8eae}</Project>
+      <Name>Ruley.Redis</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

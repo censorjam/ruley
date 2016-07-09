@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Ruley.Core.Filters
+﻿namespace Ruley.Core.Filters
 {
     public class AddFieldFilter : InlineFilter
     {

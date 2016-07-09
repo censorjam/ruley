@@ -52,9 +52,9 @@ namespace TestApp
             var rm = new RuleManager();
             RuleModule.RuleManager = rm;
             rm.Start();
-            var uri = new Uri("http://localhost:12345/");
-            _nancy = new NancyHost(uri);
-            _nancy.Start();
+            //var uri = new Uri("http://localhost:12345/");
+            //_nancy = new NancyHost(uri);
+            //_nancy.Start();
 
             Console.ReadLine();
         }

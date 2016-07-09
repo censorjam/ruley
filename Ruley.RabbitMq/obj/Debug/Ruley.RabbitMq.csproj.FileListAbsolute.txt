@@ -1,4 +1,3 @@
-C:\Users\marcjones\Documents\GitHub\ruley\Ruley.RabbitMq\bin\Debug\rules\json1.json
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.RabbitMq\bin\Debug\Ruley.RabbitMq.dll
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.RabbitMq\bin\Debug\Ruley.RabbitMq.pdb
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.RabbitMq\bin\Debug\EasyNetQ.dll
@@ -44,3 +43,5 @@ C:\Users\marc.jones\Desktop\GitHub\ruley\Ruley.RabbitMq\obj\Debug\Ruley.RabbitMq
 C:\Users\marc.jones\Desktop\GitHub\ruley\Ruley.RabbitMq\obj\Debug\Ruley.RabbitMq.dll
 C:\Users\marc.jones\Desktop\GitHub\ruley\Ruley.RabbitMq\obj\Debug\Ruley.RabbitMq.pdb
 C:\Users\marc.jones\Desktop\GitHub\ruley\Ruley.RabbitMq\bin\Debug\rules\json3.json
+C:\Users\marcjones\Documents\GitHub\ruley\Ruley.RabbitMq\bin\Debug\rules\health-check-rabbitmq.json
+C:\Users\marcjones\Documents\GitHub\ruley\Ruley.RabbitMq\bin\Debug\rules\health-check-reporter.json

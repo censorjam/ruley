@@ -8,12 +8,12 @@ namespace Ruley.Core
     public class RuleManager
     {
         public static MessageBus MessageBus = new MessageBus();
-        private readonly Dictionary<string, Rule> _rules = new Dictionary<string, Rule>();
+        private readonly Dictionary<string, RuleSet> _rules = new Dictionary<string, RuleSet>();
         private readonly RuleProvider _ruleProvider;
         private readonly Preprocessor _preprocessor;
         private List<string> _ignoreFile = new List<string>() { "global" };
 
-        public void Add(Rule rule)
+        public void Add(RuleSet rule)
         {
             _rules.Add("test123", rule);
         }
@@ -41,12 +41,20 @@ namespace Ruley.Core
             _preprocessor.Alias("@count", "Ruley.Core.Filters.CountFilter, Ruley");
             _preprocessor.Alias("@slackf", "Ruley.Core.Filters.SlackFilter, Ruley");
             _preprocessor.Alias("@passthrough", "Ruley.Core.Filters.PassThroughFilter, Ruley");
-            _preprocessor.Alias("@bus.out", "Ruley.Core.Filters.MessageBusPublisherFilter, Ruley");
+            
+            _preprocessor.Alias("@bus.pub", "Ruley.Core.Filters.MessageBusPublisherFilter, Ruley");
+            _preprocessor.Alias("@bus.sub", "Ruley.Core.Filters.MessageBusSubscriberFilter, Ruley");
+
             _preprocessor.Alias("@branch", "Ruley.Core.Filters.BranchFilter, Ruley");
             _preprocessor.Alias("@replayField", "Ruley.Core.Filters.ReplayFieldFilter, Ruley");
             _preprocessor.Alias("@regex", "Ruley.Core.Filters.RegexFilter, Ruley");
             _preprocessor.Alias("@distinctvalue", "Ruley.Core.Filters.DistinctValueFilter, Ruley");
             _preprocessor.Alias("@skip", "Ruley.Core.Filters.SkipFilter, Ruley");
+            _preprocessor.Alias("@http", "Ruley.Core.Filters.HttpFilter, Ruley");
+
+            _preprocessor.Alias("@redis.ping", "Ruley.Redis.RedisPing, Ruley.Redis");
+
+            
 
             _preprocessor.Alias("@rabbitmq.in", "Ruley.RabbitMq.RabbitMqInput, Ruley.RabbitMq");
 

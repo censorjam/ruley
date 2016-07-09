@@ -1,0 +1,36 @@
+﻿{
+    "debug": false,
+
+    "globals": {
+    },
+
+    "parameters": [
+        {
+        }
+    ],
+
+    "template": {
+        "input": {
+            "$type": "@bus.sub",
+            "key": "health-check"
+        },
+
+        "filters": [
+            {
+                "$type": "@slackf",
+                "enabled": true,
+                "webHookUrl": "@slack_url",
+                "username": "health-bot",
+                "emoji": ":ambulance:",
+                "message": "*{name}* on {host} is *{status}* {info}"
+            }
+        ],
+
+        "outputs": [
+            {
+                "$type": "@console",
+                "enabled": true
+            }
+        ]
+    }
+}

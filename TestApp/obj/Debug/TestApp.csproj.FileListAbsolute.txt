@@ -19,7 +19,6 @@ C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\TestApp\bin
 C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\TestApp\bin\Debug\Newtonsoft.Json.xml
 C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\TestApp\bin\Debug\System.Reactive.Core.xml
 C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\TestApp\bin\Debug\System.Reactive.Interfaces.xml
-C:\Users\marcjones\Documents\GitHub\ruley\TestApp\bin\Debug\rules\json1.json
 C:\Users\marcjones\Documents\GitHub\ruley\TestApp\bin\Debug\TestApp.exe.config
 C:\Users\marcjones\Documents\GitHub\ruley\TestApp\bin\Debug\TestApp.exe
 C:\Users\marcjones\Documents\GitHub\ruley\TestApp\bin\Debug\TestApp.pdb
@@ -59,3 +58,5 @@ C:\Users\marc.jones\Desktop\GitHub\ruley\TestApp\obj\Debug\TestApp.csprojResolve
 C:\Users\marc.jones\Desktop\GitHub\ruley\TestApp\obj\Debug\TestApp.exe
 C:\Users\marc.jones\Desktop\GitHub\ruley\TestApp\obj\Debug\TestApp.pdb
 C:\Users\marc.jones\Desktop\GitHub\ruley\TestApp\bin\Debug\rules\json3.json
+C:\Users\marcjones\Documents\GitHub\ruley\TestApp\bin\Debug\rules\health-check-reporter.json
+C:\Users\marcjones\Documents\GitHub\ruley\TestApp\bin\Debug\rules\health-check-rabbitmq.json

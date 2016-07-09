@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Dynamic;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
@@ -23,10 +22,8 @@ namespace Ruley.Core.Inputs
 
         public void OnNext(ExpandoObject next)
         {
-            dynamic n = next;
-            n.Properties = Properties;
-            var ev = new Event(n) {Created = DateTime.UtcNow};
-
+            var ev = Context.GetNext();
+            ev.Data.Merge(next);
             lock (_lock)
             {
                 _subject.OnNext(ev);
@@ -52,7 +49,7 @@ namespace Ruley.Core.Inputs
 
         public override void Start()
         {
-            RuleManager.MessageBus.Subscribe(Key, OnNext);
+            RuleManager.MessageBus.Subscribe(Key, e => { OnNext(e.Data); });
         }
     }
 }

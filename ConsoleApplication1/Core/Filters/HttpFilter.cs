@@ -1,49 +1,45 @@
 ﻿using System;
-using System.Dynamic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 
-namespace Ruley.Core.Inputs
+namespace Ruley.Core.Filters
 {
-    public class HttpPollerInput : PollingInput
+    public class HttpFilter : InlineFilter
     {
         public Property<string> Url { get; set; }
         public Property<string> Username { get; set; }
         public Property<string> Password { get; set; }
         public Property<string> Authentication { get; set; }
+        public Property<long> Timeout { get; set; }
 
-        public override async void OnTick()
+        public override Event Apply(Event ev)
         {
-            dynamic ex = new ExpandoObject();
-            ex.Properties = Properties;
-            var ev = new Event(ex);
-
             using (var client = new HttpClient())
             {
+                client.Timeout = TimeSpan.FromMilliseconds(Timeout.Get(ev));
                 if (Authentication.Get(ev) == "basic")
                 {
                     var encoded = Convert.ToBase64String(Encoding.ASCII.GetBytes(String.Format("{0}:{1}", Username.Get(ev), Password.Get(ev))));
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", encoded);
                 }
 
-                dynamic n = new ExpandoObject();
+                dynamic data = ev.Data.AsDynamic();
                 try
                 {
                     var url = Url.Get(ev);
-                    var response = await client.GetAsync(url);
-                    n.StatusCode = (long)response.StatusCode; 
-                    n.GotResponse = true;
+                    var response = client.GetAsync(url).Result;
+                    data.statusCode = (long)response.StatusCode;
+                    data.gotResponse = true;
                 }
                 catch (Exception e)
                 {
-                    n.StatusCode = -1;
-                    n.GotResponse = false;
-                    n.ExceptionMessage = e.Message;
+                    data.statusCode = -1;
+                    data.gotResponse = false;
+                    data.exceptionMessage = e.Message;
                 }
-
-                OnNext(n);
             }
+            return ev;
         }
     }
 }

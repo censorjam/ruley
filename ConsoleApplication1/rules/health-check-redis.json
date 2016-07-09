@@ -1,0 +1,35 @@
+﻿{
+    "debug": false,
+
+    "globals": {
+    },
+
+    "parameters": [
+        { "host": "localhost" }
+    ],
+
+    "template": {
+        "input": {
+            "$type": "Ruley.Core.Inputs.PollingInput, Ruley",
+            "interval": 5000
+        },
+
+        "filters": [
+            {
+                "$type": "@redis.ping",
+                "connectionString": "localhost"
+            },
+            {
+                "$type": "@bus.pub",
+                "key": "health-check2"
+            }
+        ],
+
+        "outputs": [
+            {
+                "$type": "@console",
+                "enabled": true
+            }
+        ]
+    }
+}

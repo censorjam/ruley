@@ -20,7 +20,6 @@ C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\ConsoleAppl
 C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\ConsoleApplication1\bin\Debug\Ruley.dll.config
 C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\ConsoleApplication1\bin\Debug\Ruley.dll
 C:\Users\marc.jones\Desktop\ConsoleApplication10\ConsoleApplication1\ConsoleApplication1\obj\Debug\Ruley.dll
-C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\bin\Debug\rules\json1.json
 C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\bin\Debug\Ruley.pdb
 C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\bin\Debug\NCalc.dll
 C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\bin\Debug\Newtonsoft.Json.dll
@@ -38,7 +37,6 @@ C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\bin\Debug\System.R
 C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\bin\Debug\System.Reactive.PlatformServices.xml
 C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\bin\Debug\System.Reactive.Windows.Threading.xml
 C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\obj\Debug\Ruley.pdb
-C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\obj\Debug\Ruley.csprojResolveAssemblyReference.cache
 C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\bin\Debug\Ruley.exe.config
 C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\bin\Debug\Ruley.exe
 C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\obj\Debug\Ruley.exe
@@ -64,3 +62,6 @@ C:\Users\marc.jones\Desktop\GitHub\ruley\ConsoleApplication1\obj\Debug\Ruley.exe
 C:\Users\marc.jones\Desktop\GitHub\ruley\ConsoleApplication1\obj\Debug\Ruley.pdb
 C:\Users\marc.jones\Desktop\GitHub\ruley\ConsoleApplication1\bin\Debug\rules\json3.json
 C:\Users\marc.jones\Desktop\GitHub\ruley\ConsoleApplication1\obj\Debug\Ruley.csprojResolveAssemblyReference.cache
+C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\bin\Debug\rules\health-check-rabbitmq.json
+C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\bin\Debug\rules\health-check-reporter.json
+C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\obj\Debug\Ruley.csprojResolveAssemblyReference.cache

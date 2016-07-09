@@ -52,6 +52,16 @@ namespace Ruley.Core
             return new Property<T>(d);
         }
 
+        public static implicit operator int(Property<T> d)
+        {
+            throw new Exception("Invalid cast");
+        }
+
+        public static implicit operator Property<T>(int d)
+        {
+            return new Property<T>(d);
+        }
+
         public static implicit operator double(Property<T> d)
         {
             throw new Exception("Invalid cast");

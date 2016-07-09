@@ -9,14 +9,14 @@ namespace Ruley.Core
         public DateTime? Processed { get; set; }
         public ExpandoObject Data { get; set; }
         
-        public Event()
-        {
-            Data = new ExpandoObject();
-        }
-
-        public Event(ExpandoObject data)
+        private Event(ExpandoObject data)
         {
             Data = data;
+        }
+
+        internal static Event Create(ExpandoObject data)
+        {
+            return new Event(data);
         }
     }
 }

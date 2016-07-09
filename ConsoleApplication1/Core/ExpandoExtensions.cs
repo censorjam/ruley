@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Dynamic;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace Ruley.Core
 {
-    public static class ExpandoExtensions
+    public static class ExpandoHelper
     {
         public static object GetValue(this ExpandoObject msg, string path)
         {
@@ -39,6 +40,31 @@ namespace Ruley.Core
             //}
             //var value = ((IDictionary<string, object>)msg)[path];
             //return value;
+        }
+
+        public static ExpandoObject ToExpando(this object obj)
+        {
+            var converter = new ExpandoObjectConverter();
+            return JsonConvert.DeserializeObject<ExpandoObject>(JsonConvert.SerializeObject(obj), converter);
+        }
+
+        public static void Merge(this ExpandoObject expando, ExpandoObject other)
+        {
+            var d = expando.AsDictionary();
+            foreach (var o in other.AsDictionary())
+            {
+                d[o.Key] = o.Value;
+            }
+        }
+
+        public static dynamic AsDynamic(this ExpandoObject msg)
+        {
+            return msg;
+        }
+
+        public static IDictionary<string, object> AsDictionary(this ExpandoObject msg)
+        {
+            return msg;
         }
 
         public static void SetValue(this ExpandoObject msg, string path, object value)

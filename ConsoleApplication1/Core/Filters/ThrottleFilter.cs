@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Dynamic;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
 using Newtonsoft.Json;
@@ -33,7 +32,7 @@ namespace Ruley.Core.Filters
             var count = msgs.Count;
             if (count == 0)
             {
-                msgs = new List<Event> {new Event()};
+                msgs = new List<Event> { Context.GetNext() };
             }
 
             msgs[0].Data.SetValue(CountField ?? "count", count);
