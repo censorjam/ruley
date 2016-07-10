@@ -8,7 +8,7 @@ namespace Ruley.Core
 {
     public static class Templater
     {
-        public static string ApplyTemplate(string template, DataBag o)
+        public static string ApplyTemplate(string template, DynamicDictionary o)
         {
             //var t = Template.Parse(template);
             //var hash = Hash.FromDictionary(o);

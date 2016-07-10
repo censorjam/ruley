@@ -23,7 +23,7 @@ namespace Ruley.Tests
         [Test]
         public void Flat_From_Object()
         {
-            dynamic db = DataBag.FromObject(new TestObject() {Prop1 = "abc", Prop2 = 100});
+            dynamic db = DynamicDictionary.Create(new TestObject() { Prop1 = "abc", Prop2 = 100 });
 
             Assert.AreEqual("abc", db["Prop1"]);
             Assert.AreEqual(100, db["Prop2"]);

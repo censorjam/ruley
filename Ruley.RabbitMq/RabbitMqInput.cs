@@ -25,7 +25,7 @@ namespace Ruley.RabbitMq
 
         public override void Start()
         {
-            var _bus = RabbitHutch.CreateBus(ConnectionString);
+            _bus = RabbitHutch.CreateBus(ConnectionString);
             var queue = _bus.Advanced.QueueDeclare(QueueName, false, true, false, true);
             var exchange = _bus.Advanced.ExchangeDeclare(ExchangeName, ExchangeType);
 
@@ -34,7 +34,7 @@ namespace Ruley.RabbitMq
             _bus.Advanced.Consume(queue, (x, b, c) =>
             {
                 var s = Encoding.UTF8.GetString(x);
-                OnNext(DataBag.FromJson(s));
+                OnNext(DynamicDictionary.Create(s));
             });
         }
 

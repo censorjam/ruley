@@ -56,8 +56,8 @@ C:\Users\marc.jones\Desktop\GitHub\ruley\TestApp\obj\Debug\TestApp.csprojResolve
 C:\Users\marc.jones\Desktop\GitHub\ruley\TestApp\obj\Debug\TestApp.exe
 C:\Users\marc.jones\Desktop\GitHub\ruley\TestApp\obj\Debug\TestApp.pdb
 C:\Users\marc.jones\Desktop\GitHub\ruley\TestApp\bin\Debug\rules\json3.json
-C:\Users\marcjones\Documents\GitHub\ruley\TestApp\bin\Debug\rules\health-check-reporter.json
-C:\Users\marcjones\Documents\GitHub\ruley\TestApp\bin\Debug\rules\health-check-redis.json
 C:\Users\marcjones\Documents\GitHub\ruley\TestApp\bin\Debug\rules\health-check-rabbitmq.json
 C:\Users\marcjones\Documents\GitHub\ruley\TestApp\bin\Debug\SmartFormat.dll
 C:\Users\marcjones\Documents\GitHub\ruley\TestApp\bin\Debug\SmartFormat.pdb
+C:\Users\marcjones\Documents\GitHub\ruley\TestApp\bin\Debug\nunit.framework.dll
+C:\Users\marcjones\Documents\GitHub\ruley\TestApp\bin\Debug\nunit.framework.xml

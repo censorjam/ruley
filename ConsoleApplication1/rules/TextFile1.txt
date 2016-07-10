@@ -1,0 +1,30 @@
+﻿
+
+parameters:
+	-	name:
+		host:
+		port:
+	-	name:
+		host:
+		port:
+
+interval:
+	period: 5000
+
+stages:
+  - http:
+      url: {url}
+      username: 
+
+	- if:
+		condition: {a} > {b}
+		true:
+			slack
+				msg: error message
+				channel: error-channel
+		false:
+			block
+
+	- distinct:
+		field: statusCode
+

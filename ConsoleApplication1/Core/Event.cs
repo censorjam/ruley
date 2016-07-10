@@ -1,25 +1,24 @@
 ﻿using System;
+using System.Collections.Generic;
 using Ruley.Dynamic;
 
 namespace Ruley.Core
 {
     public class Event
     {
-        public DateTime? Created { get; set; }
-        public DateTime? Processed { get; set; }
-        public DataBag Data { get; set; }
+        public DynamicDictionary Data { get; set; }
 
         public Event()
         {
-            Data = new DataBag();
+            Data = new DynamicDictionary();
         }
 
-        public Event(DataBag data)
+        public Event(DynamicDictionary data)
         {
             Data = data;
         }
 
-        internal static Event Create(DataBag data)
+        internal static Event Create(DynamicDictionary data)
         {
             return new Event(data);
         }

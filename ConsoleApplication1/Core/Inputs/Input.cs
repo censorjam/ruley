@@ -21,7 +21,7 @@ namespace Ruley.Core.Inputs
             get { return _subject.AsObservable(); }
         }
 
-        public void OnNext(DataBag next)
+        public void OnNext(DynamicDictionary next)
         {
             var ev = Context.GetNext();
             ev.Data.Merge(next);

@@ -62,8 +62,7 @@ C:\Users\marc.jones\Desktop\GitHub\ruley\ConsoleApplication1\obj\Debug\Ruley.exe
 C:\Users\marc.jones\Desktop\GitHub\ruley\ConsoleApplication1\obj\Debug\Ruley.pdb
 C:\Users\marc.jones\Desktop\GitHub\ruley\ConsoleApplication1\bin\Debug\rules\json3.json
 C:\Users\marc.jones\Desktop\GitHub\ruley\ConsoleApplication1\obj\Debug\Ruley.csprojResolveAssemblyReference.cache
-C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\bin\Debug\rules\health-check-reporter.json
-C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\bin\Debug\rules\health-check-redis.json
 C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\bin\Debug\rules\health-check-rabbitmq.json
 C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\bin\Debug\DotLiquid.dll
-C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\obj\Debug\Ruley.csprojResolveAssemblyReference.cache
+C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\bin\Debug\nunit.framework.dll
+C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\bin\Debug\nunit.framework.xml

@@ -6,8 +6,7 @@ namespace Ruley.Core.Filters
     {
         public static Filter ToSingle(this IEnumerable<Filter> filters)
         {
-            var chain = new ChainFilter();
-            chain.Filters = filters;
+            var chain = new ChainFilter {Filters = filters};
             return chain;
         }
     }

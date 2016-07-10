@@ -15,7 +15,7 @@ namespace Ruley.Dynamic
             switch (token.Type)
             {
                 case JTokenType.Object:
-                    return new DataBag(token.Children<JProperty>()
+                    return new DynamicDictionary(token.Children<JProperty>()
                         .ToDictionary(prop => prop.Name,
                             prop => ToObject(prop.Value)));
 

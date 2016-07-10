@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Dynamic;
 using System.Reactive.Linq;
-using Newtonsoft.Json;
 using Ruley.Core.Outputs;
 
 namespace Ruley.Core.Filters

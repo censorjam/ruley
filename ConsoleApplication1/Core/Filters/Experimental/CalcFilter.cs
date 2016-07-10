@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Dynamic;
 using NCalc;
 
 namespace Ruley.Core.Filters

@@ -1,5 +1,5 @@
 ﻿{
-    "debug": false,
+    "debug": true,
 
     "globals": {
         "type": "rabbitmq"
@@ -12,7 +12,8 @@
             "port": 15672,
             "vhost": "events",
             "authentication": {
-                "username": "guest"
+                "username": "guest",
+                "password": "guest"
             }
         },
         {
@@ -20,7 +21,10 @@
             "host": "rmq001",
             "port": 15672,
             "vhost": "sdffd",
-            "authentication": { "username": "guest" }
+            "authentication": {
+                "username": "guest",
+                "password": "guest"
+            }
         }
     ],
 
@@ -40,9 +44,9 @@
                 "$type": "@http",
                 "url": "{url}",
                 "username": "{authentication.username}",
-                "password": "guest",
+                "password": "{authentication.password}",
                 "authentication": "basic",
-                "timeout": 3000
+                "timeout": 5000
             },
             {
                 "$type": "@map",
@@ -52,23 +56,20 @@
                     [ 200, "Healthy" ]
                 ],
                 "map": [
-                    { "in": 200, "out": { "test": "abc" } }
+                    { "key": 200, "value": { "status": "Healthy" } }
                 ],
                 "default": "Unhealthy"
             },
             {
-                "$type": "@template",
-                "template": "Status Code: {statusCode}\nUrl: {url}\nException: {exception}",
-                "destination": "info"
-            },
-            {
-                "$type": "@distinctvalue",
+                "$type": "@distinct",
                 "field": "status"
             },
             {
-                "$type": "@addfield",
-                "destination": "type",
-                "value": "rabbitmq"
+                "$type": "@merge",
+                "data": {
+                    "type": "rabbitmq",
+                    "info": "Status Code: {statusCode}\nUrl: {url}\nException: {exception}"
+                }
             },
             {
                 "$type": "@bus.pub",
@@ -79,7 +80,7 @@
         "outputs": [
             {
                 "$type": "@console",
-                "enabled": false
+                "enabled": true
             }
         ]
     }

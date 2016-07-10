@@ -54,7 +54,7 @@ namespace Ruley.Core.Outputs
             }
         }
 
-        public T Get<T>(object value, DataBag msg)
+        public T Get<T>(object value, DynamicDictionary msg)
         {
             //todo what about nulls default(T)?
 

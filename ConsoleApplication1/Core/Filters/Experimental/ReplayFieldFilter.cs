@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Dynamic;
 using Ruley.Dynamic;
 
 namespace Ruley.Core.Filters
@@ -8,7 +7,7 @@ namespace Ruley.Core.Filters
     {
         public string Field { get; set; }
 
-        private DataBag _prev;
+        private DynamicDictionary _prev;
 
         public override Event Apply(Event msg)
         {

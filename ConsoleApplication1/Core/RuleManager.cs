@@ -32,7 +32,7 @@ namespace Ruley.Core
             _preprocessor.Alias("@throttle", "Ruley.Core.Filters.ThrottleFilter, Ruley");
             _preprocessor.Alias("@concat", "Ruley.Core.Filters.ConcatFilter, Ruley");
             _preprocessor.Alias("@conditional", "Ruley.Core.Filters.ConditionalFilter, Ruley");
-            _preprocessor.Alias("@addfield", "Ruley.Core.Filters.AddFieldFilter, Ruley");
+            _preprocessor.Alias("@merge", "Ruley.Core.Filters.MergeFilter, Ruley");
             _preprocessor.Alias("@chain", "Ruley.Core.Filters.ChainFilter, Ruley");
             _preprocessor.Alias("@groupby", "Ruley.Core.Filters.GroupByFilter, Ruley");
             _preprocessor.Alias("@calc", "Ruley.Core.Filters.CalcFilter, Ruley");
@@ -48,7 +48,7 @@ namespace Ruley.Core
             _preprocessor.Alias("@branch", "Ruley.Core.Filters.BranchFilter, Ruley");
             _preprocessor.Alias("@replayField", "Ruley.Core.Filters.ReplayFieldFilter, Ruley");
             _preprocessor.Alias("@regex", "Ruley.Core.Filters.RegexFilter, Ruley");
-            _preprocessor.Alias("@distinctvalue", "Ruley.Core.Filters.DistinctValueFilter, Ruley");
+            _preprocessor.Alias("@distinct", "Ruley.Core.Filters.DistinctFilter, Ruley");
             _preprocessor.Alias("@skip", "Ruley.Core.Filters.SkipFilter, Ruley");
             _preprocessor.Alias("@http", "Ruley.Core.Filters.HttpFilter, Ruley");
 

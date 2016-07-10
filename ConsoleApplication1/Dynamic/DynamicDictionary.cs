@@ -6,15 +6,15 @@ using Newtonsoft.Json;
 
 namespace Ruley.Dynamic
 {
-    public class DataBag : DynamicObject, IDictionary<string, object>
+    public class DynamicDictionary : DynamicObject, IDictionary<string, object>
     {
         private readonly IDictionary<string, object> _dictionary = new Dictionary<string, object>();
 
-        public DataBag()
+        public DynamicDictionary()
         {
         }
 
-        public DataBag(IDictionary<string, object> source)
+        public DynamicDictionary(IDictionary<string, object> source)
         {
             _dictionary = source;
         }
@@ -146,12 +146,12 @@ namespace Ruley.Dynamic
             return _dictionary[path] = value;
         }
 
-        public DataBag Clone()
+        public DynamicDictionary Clone()
         {
-            return (DataBag)JsonHelper.Deserialize(JsonConvert.SerializeObject(this));
+            return (DynamicDictionary)JsonHelper.Deserialize(JsonConvert.SerializeObject(this));
         }
 
-        public void Merge(DataBag other)
+        public void Merge(DynamicDictionary other)
         {
             foreach (var o in other)
             {
@@ -164,14 +164,15 @@ namespace Ruley.Dynamic
             return _dictionary.ContainsKey(property);
         }
 
-        public static DataBag FromObject(object o)
+        public static DynamicDictionary Create(object o)
         {
-            return (DataBag)JsonHelper.Deserialize(JsonConvert.SerializeObject(o));
+            var settings = new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.Auto };
+            return (DynamicDictionary)JsonHelper.Deserialize(JsonConvert.SerializeObject(o, settings));
         }
 
-        public static DataBag FromJson(string json)
+        public static DynamicDictionary Create(string json)
         {
-            return (DataBag) JsonHelper.Deserialize(json);
+            return (DynamicDictionary)JsonHelper.Deserialize(json);
         }
     }
 }

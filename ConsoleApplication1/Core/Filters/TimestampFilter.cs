@@ -1,17 +1,16 @@
 ﻿using System;
-using System.Dynamic;
 using Newtonsoft.Json;
 
 namespace Ruley.Core.Filters
 {
     public class TimestampFilter : InlineFilter
     {
-        [JsonProperty(Required = Required.Always)]
+        [JsonRequired]
         public string Destination { get; set; }
 
         public override Event Apply(Event msg)
         {
-            msg.Data.SetValue(Destination, DateTime.Now);
+            msg.Data[Destination] = DateTime.UtcNow;
             return msg;
         }
     }

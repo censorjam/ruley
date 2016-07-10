@@ -8,7 +8,7 @@ namespace Ruley.Core.Filters
     public class Mapping
     {
         public object In { get; set; }
-        public DataBag Out { get; set; }
+        public DynamicDictionary Out { get; set; }
     }
 
     public class MapFilter : InlineFilter

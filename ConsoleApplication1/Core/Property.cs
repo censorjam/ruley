@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Dynamic;
 using Ruley.Core.Outputs;
+using Ruley.Dynamic;
 
 namespace Ruley.Core
 {
@@ -78,6 +78,16 @@ namespace Ruley.Core
         }
 
         public static implicit operator Property<T>(bool d)
+        {
+            return new Property<T>(d);
+        }
+
+        public static implicit operator DynamicDictionary(Property<T> d)
+        {
+            throw new Exception("Invalid cast");
+        }
+
+        public static implicit operator Property<T>(DynamicDictionary d)
         {
             return new Property<T>(d);
         }

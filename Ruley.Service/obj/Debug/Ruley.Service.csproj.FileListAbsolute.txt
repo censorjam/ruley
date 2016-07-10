@@ -60,8 +60,8 @@ C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\StackExchange.
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\Ruley.Redis.pdb
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\StackExchange.Redis.pdb
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\StackExchange.Redis.xml
-C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\rules\health-check-reporter.json
-C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\rules\health-check-redis.json
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\rules\health-check-rabbitmq.json
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\SmartFormat.dll
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\SmartFormat.pdb
+C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\nunit.framework.dll
+C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\nunit.framework.xml

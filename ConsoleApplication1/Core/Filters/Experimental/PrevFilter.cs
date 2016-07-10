@@ -9,7 +9,7 @@ namespace Ruley.Core.Filters
         [JsonProperty(Required = Required.Always)]
         public string Destination { get; set; }
 
-        private DataBag _prev;
+        private DynamicDictionary _prev;
 
         public override Event Apply(Event msg)
         {

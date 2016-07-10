@@ -1,6 +1,4 @@
-﻿using System.Dynamic;
-
-namespace Ruley.Core.Filters
+﻿namespace Ruley.Core.Filters
 {
     public class PassThroughFilter : InlineFilter
     {

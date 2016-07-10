@@ -36,7 +36,7 @@ namespace Ruley.Core.Inputs
 
         public virtual void OnTick()
         {
-            OnNext(new DataBag());
+            OnNext(new DynamicDictionary());
         }
     }
 }

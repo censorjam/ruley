@@ -31,7 +31,7 @@ namespace Ruley.Core
             {
                 var rule = JsonConvert.DeserializeObject<Rule>(JsonConvert.SerializeObject(Template, new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.Auto }), new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.Auto });
                 _rules.Add(rule);
-                rule.Parameters = DataBag.FromObject(obj);
+                rule.Parameters = DynamicDictionary.Create(obj);
                 rule.Name = FileName;
                 rule.Start();
             }
@@ -52,7 +52,7 @@ namespace Ruley.Core
         public List<Output> Outputs { get; set; }
         public List<Filter> Filters { get; set; }
         public event Action<Exception> OnError;
-        public DataBag Parameters { get; set; }
+        public DynamicDictionary Parameters { get; set; }
 
         internal void Validate()
         {

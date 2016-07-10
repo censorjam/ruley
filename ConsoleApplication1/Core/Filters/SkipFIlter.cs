@@ -1,4 +1,6 @@
-﻿namespace Ruley.Core.Filters
+﻿using NUnit.Framework;
+
+namespace Ruley.Core.Filters
 {
     public class SkipFilter : InlineFilter 
     {
@@ -15,5 +17,11 @@
             }
             return msg;
         }
+    }
+
+    [TestFixture]
+    public class SkipTests
+    {
+        
     }
 }
