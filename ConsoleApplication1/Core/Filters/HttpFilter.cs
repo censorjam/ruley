@@ -17,7 +17,9 @@ namespace Ruley.Core.Filters
         {
             using (var client = new HttpClient())
             {
-                client.Timeout = TimeSpan.FromMilliseconds(Timeout.Get(ev));
+                if (Timeout != null)
+                    client.Timeout = TimeSpan.FromMilliseconds(Timeout.Get(ev));
+
                 if (Authentication.Get(ev) == "basic")
                 {
                     var encoded = Convert.ToBase64String(Encoding.ASCII.GetBytes(String.Format("{0}:{1}", Username.Get(ev), Password.Get(ev))));
@@ -34,9 +36,9 @@ namespace Ruley.Core.Filters
                 }
                 catch (Exception e)
                 {
-                    data.statusCode = -1;
+                    data.statusCode = 0;
                     data.gotResponse = false;
-                    data.exceptionMessage = e.Message;
+                    data.exception = e;
                 }
             }
             return ev;

@@ -66,7 +66,7 @@ namespace Ruley.Core
 
         public Event GetNext()
         {
-            return Event.Create(Parameters);
+            return Event.Create(Parameters.Clone());
         }
 
         private List<Component> GetComponents()

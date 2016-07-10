@@ -17,12 +17,30 @@
 
         "filters": [
             {
+                "$type": "@map",
+                "field": "status",
+                "destination": "emoji",
+                "mapping": [
+                    [ "Healthy", ":ok:" ]
+                ],
+                "default": ":ambulance:"
+            },
+            {
+                "$type": "@map",
+                "field": "status",
+                "destination": "infoMessage",
+                "mapping": [
+                    [ "Healthy", null ]
+                ],
+                "default": "\n{info}"
+            },
+            {
                 "$type": "@slackf",
                 "enabled": true,
                 "webHookUrl": "@slack_url",
                 "username": "health-bot",
-                "emoji": ":ambulance:",
-                "message": "*{name}* on {host} is *{status}* {info}"
+                "emoji": "{emoji}",
+                "message": "*{name}* on {host} is *{status}*{infoMessage}"
             }
         ],
 

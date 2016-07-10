@@ -71,15 +71,10 @@ namespace Ruley.Core.Outputs
 
             if (_type == PropertyType.Template)
             { 
-                return (T)(object)Template(value as string, msg);
+                return (T)(object)Templater.ApplyTemplate(value as string, msg);
             }
 
             throw new Exception("error");
-        }
-
-        public string Template(string template, ExpandoObject msg)
-        {
-            return Smart.Format(template, msg);
         }
     }
 }

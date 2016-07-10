@@ -13,7 +13,7 @@ namespace Ruley.Core.Filters
 
         public override Event Apply(Event msg)
         {
-            msg.Data.SetValue(Destination, Templater.ApplyTemplate(Template.Get(msg), msg));
+            msg.Data.SetValue(Destination, Templater.ApplyTemplate(Template.Get(msg), msg.Data));
             return msg;
         }
     }

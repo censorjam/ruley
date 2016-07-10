@@ -10,7 +10,7 @@
             var n = msg.Data.GetValue(Field.Get(msg));
             var next = n != null ? n.ToString() : null;
 
-            if (next != _prevValue)
+            if (!next.Equals(_prevValue))
             {
                 _prevValue = next;
                 return msg;

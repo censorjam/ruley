@@ -69,7 +69,8 @@ namespace Ruley.Core.Filters
         {
             foreach (var mapping in Mapping)
             {
-                var s = mapping[0].ToString();
+                var s = mapping[0] == null ? "null" : mapping[0].ToString();
+
                 if (msg.Data.GetValue(Field.Get(msg)).ToString() == s)
                 {
                     msg.Data.SetValue(Destination.Get(msg), mapping[1]);

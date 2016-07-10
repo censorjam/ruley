@@ -17,18 +17,39 @@ namespace Ruley.Redis
             {
                 if (_server == null)
                 {
-                    //todo send unhealthy if this fails
-                    var options = ConfigurationOptions.Parse(ConnectionString);
-                    options.AllowAdmin = true;
-                    var redis = ConnectionMultiplexer.Connect(options);
-                    _server = redis.GetServer(redis.GetEndPoints()[0]);
+                    try
+                    {
+                        //todo send unhealthy if this fails
+                        var options = ConfigurationOptions.Parse(ConnectionString);
+                        options.AllowAdmin = true;
+                        var redis = ConnectionMultiplexer.Connect(options);
+                        _server = redis.GetServer(redis.GetEndPoints()[0]);
+                    }
+                    catch (Exception e)
+                    {
+                        dynamic m = msg.Data.AsDynamic();
+                        m.exception = e;
+                        m.ping = null;
+                        return msg;
+                    }
                 }
             }
 
-            var elapsed = _server.Info();
-            dynamic payload = msg.Data.AsDynamic();
-            payload.Ping = elapsed;
-            return msg;
+            try
+            {
+                var elapsed = _server.Info();
+                dynamic payload = msg.Data.AsDynamic();
+                payload.exception = null;
+                payload.Ping = elapsed;
+                return msg;
+            }
+            catch (Exception e)
+            {
+                dynamic m = msg.Data.AsDynamic();
+                m.exception = e;
+                m.ping = null;
+                return msg;
+            }
         }
     }
 

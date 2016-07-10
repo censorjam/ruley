@@ -8,7 +8,6 @@ C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\Newtonsoft.Jso
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\System.Reactive.Core.dll
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\NCalc.dll
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\System.Reactive.Interfaces.dll
-C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\SmartFormat.dll
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\Ruley.pdb
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\Nancy.xml
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\Nancy.Hosting.Self.xml
@@ -16,7 +15,6 @@ C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\System.Reactiv
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\Newtonsoft.Json.xml
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\System.Reactive.Core.xml
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\System.Reactive.Interfaces.xml
-C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\SmartFormat.pdb
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\obj\Debug\Ruley.Service.csprojResolveAssemblyReference.cache
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\obj\Debug\Ruley.Service.exe
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\obj\Debug\Ruley.Service.pdb
@@ -62,5 +60,7 @@ C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\StackExchange.
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\Ruley.Redis.pdb
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\StackExchange.Redis.pdb
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\StackExchange.Redis.xml
-C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\rules\health-check-rabbitmq.json
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\rules\health-check-reporter.json
+C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\rules\health-check-redis.json
+C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\rules\health-check-rabbitmq.json
+C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\DotLiquid.dll

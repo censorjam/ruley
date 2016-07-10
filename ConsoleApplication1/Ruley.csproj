@@ -35,6 +35,10 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DotLiquid, Version=1.8.0.0, Culture=neutral, PublicKeyToken=82e46016ecf9f07c, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotLiquid.1.8.0\lib\NET45\DotLiquid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="NCalc, Version=1.3.8.0, Culture=neutral, PublicKeyToken=973cde3f1cafed03, processorArchitecture=MSIL">
       <HintPath>..\packages\ncalc.1.3.8\lib\NCalc.dll</HintPath>
       <Private>True</Private>
@@ -127,6 +131,8 @@
     <Compile Include="Core\Outputs\Output.cs" />
     <Compile Include="Core\Inputs\PollingInput.cs" />
     <Compile Include="Core\Templating.cs" />
+    <Compile Include="Dynamic\DataBag.cs" />
+    <Compile Include="Dynamic\JsonHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Core\Rule.cs" />
@@ -139,7 +145,9 @@
     <None Include="packages.config" />
     <None Include="rules\global.json" />
     <None Include="rules\health-check-rabbitmq - Copy.json" />
-    <None Include="rules\health-check-redis.json" />
+    <None Include="rules\health-check-redis.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="rules\json2 - Copy.json" />
     <None Include="rules\json2.json" />
     <None Include="rules\health-check-reporter.json">
