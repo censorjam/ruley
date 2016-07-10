@@ -5,6 +5,7 @@ using System.Reactive.Subjects;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Ruley.Core.Outputs;
+using Ruley.Dynamic;
 
 namespace Ruley.Core.Inputs
 {
@@ -20,7 +21,7 @@ namespace Ruley.Core.Inputs
             get { return _subject.AsObservable(); }
         }
 
-        public void OnNext(ExpandoObject next)
+        public void OnNext(DataBag next)
         {
             var ev = Context.GetNext();
             ev.Data.Merge(next);

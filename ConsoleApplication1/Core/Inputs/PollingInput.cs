@@ -1,7 +1,9 @@
 using System;
+using System.Data;
 using System.Dynamic;
 using System.Threading;
 using Newtonsoft.Json;
+using Ruley.Dynamic;
 
 namespace Ruley.Core.Inputs
 {
@@ -34,7 +36,7 @@ namespace Ruley.Core.Inputs
 
         public virtual void OnTick()
         {
-            OnNext(new ExpandoObject());
+            OnNext(new DataBag());
         }
     }
 }

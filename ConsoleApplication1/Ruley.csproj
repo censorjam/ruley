@@ -99,6 +99,7 @@
     <Compile Include="Core\Filters\MessageBusFilter.cs" />
     <Compile Include="Core\Filters\PassThroughFilter.cs" />
     <Compile Include="Core\Filters\PrevFilter.cs" />
+    <Compile Include="Core\Filters\PropertyConverter.cs" />
     <Compile Include="Core\Filters\RegexFilter.cs" />
     <Compile Include="Core\Filters\ReplayFieldFilter.cs" />
     <Compile Include="Core\Filters\SkipFIlter.cs" />

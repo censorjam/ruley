@@ -33,13 +33,13 @@
         "filters": [
             {
                 "$type": "@template",
-                "template": "http://{{host}}:{{port}}/api/aliveness-test/{{vhost}}",
+                "template": "http://{host}:{port}/api/aliveness-test/{vhost}",
                 "destination": "url"
             },
             {
                 "$type": "@http",
-                "url": "{{url}}",
-                "username": "{{authentication.username}}",
+                "url": "{url}",
+                "username": "{authentication.username}",
                 "password": "guest",
                 "authentication": "basic",
                 "timeout": 3000
@@ -50,6 +50,9 @@
                 "destination": "status",
                 "mapping": [
                     [ 200, "Healthy" ]
+                ],
+                "map": [
+                    { "in": 200, "out": { "test": "abc" } }
                 ],
                 "default": "Unhealthy"
             },

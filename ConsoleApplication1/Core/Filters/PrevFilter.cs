@@ -1,5 +1,6 @@
 ﻿using System.Dynamic;
 using Newtonsoft.Json;
+using Ruley.Dynamic;
 
 namespace Ruley.Core.Filters
 {
@@ -8,13 +9,13 @@ namespace Ruley.Core.Filters
         [JsonProperty(Required = Required.Always)]
         public string Destination { get; set; }
 
-        private ExpandoObject _prev;
+        private DataBag _prev;
 
         public override Event Apply(Event msg)
         {
             msg.Data.SetValue(Destination, _prev);
             _prev = msg.Data.Clone();
-            _prev.DeleteValue(Destination);
+            _prev.Remove(Destination);
             return msg;
         }
     }

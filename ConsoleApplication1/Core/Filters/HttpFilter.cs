@@ -26,7 +26,7 @@ namespace Ruley.Core.Filters
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", encoded);
                 }
 
-                dynamic data = ev.Data.AsDynamic();
+                dynamic data = ev.Data;
                 try
                 {
                     var url = Url.Get(ev);
@@ -36,7 +36,7 @@ namespace Ruley.Core.Filters
                 }
                 catch (Exception e)
                 {
-                    data.statusCode = 0;
+                    data.statusCode = null;
                     data.gotResponse = false;
                     data.exception = e;
                 }

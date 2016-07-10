@@ -63,4 +63,5 @@ C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\StackExchange.
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\rules\health-check-reporter.json
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\rules\health-check-redis.json
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\rules\health-check-rabbitmq.json
-C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\DotLiquid.dll
+C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\SmartFormat.dll
+C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\SmartFormat.pdb

@@ -1,0 +1,54 @@
+﻿{
+    "debug": false,
+
+    "globals": {
+    },
+
+    "parameters": [
+        {
+        }
+    ],
+
+    "template": {
+        "input": {
+            "$type": "@bus.sub",
+            "key": "health-check"
+        },
+
+        "filters": [
+            {
+                "$type": "@map",
+                "field": "status",
+                "destination": "emoji",
+                "mapping": [
+                    [ "Healthy", ":ok:" ]
+                ],
+                "default": ":ambulance:"
+            },
+            {
+                "$type": "@map",
+                "field": "status",
+                "destination": "infoMessage",
+                "mapping": [
+                    [ "Healthy", null ]
+                ],
+                "default": "\n{info}"
+            },
+            {
+                "$type": "@slackf",
+                "enabled": true,
+                "webHookUrl": "@slack_url",
+                "username": "health-bot",
+                "emoji": "{emoji}",
+                "message": "*{name}* on {host} is *{status}*{infoMessage}"
+            }
+        ],
+
+        "outputs": [
+            {
+                "$type": "@console",
+                "enabled": true
+            }
+        ]
+    }
+}

@@ -44,4 +44,5 @@ C:\Users\marc.jones\Desktop\GitHub\ruley\Ruley.RabbitMq\bin\Debug\rules\json3.js
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.RabbitMq\bin\Debug\rules\health-check-reporter.json
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.RabbitMq\bin\Debug\rules\health-check-redis.json
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.RabbitMq\bin\Debug\rules\health-check-rabbitmq.json
-C:\Users\marcjones\Documents\GitHub\ruley\Ruley.RabbitMq\bin\Debug\DotLiquid.dll
+C:\Users\marcjones\Documents\GitHub\ruley\Ruley.RabbitMq\bin\Debug\SmartFormat.dll
+C:\Users\marcjones\Documents\GitHub\ruley\Ruley.RabbitMq\bin\Debug\SmartFormat.pdb

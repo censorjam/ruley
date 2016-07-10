@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="ConditionalFilterTests.cs" />
     <Compile Include="CountFilterTests.cs" />
+    <Compile Include="DynamicTests.cs" />
     <Compile Include="MapTests.cs" />
     <Compile Include="PropertyTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

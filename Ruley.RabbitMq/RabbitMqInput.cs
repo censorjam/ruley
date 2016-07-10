@@ -9,6 +9,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Ruley.Core;
 using Ruley.Core.Inputs;
+using Ruley.Dynamic;
 
 namespace Ruley.RabbitMq
 {
@@ -33,9 +34,7 @@ namespace Ruley.RabbitMq
             _bus.Advanced.Consume(queue, (x, b, c) =>
             {
                 var s = Encoding.UTF8.GetString(x);
-                var expandoObjectConverter = new ExpandoObjectConverter();
-                var o = JsonConvert.DeserializeObject<ExpandoObject>(s, expandoObjectConverter);
-                OnNext(o);
+                OnNext(DataBag.FromJson(s));
             });
         }
 

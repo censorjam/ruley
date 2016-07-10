@@ -27,7 +27,7 @@ namespace Ruley.Redis
                     }
                     catch (Exception e)
                     {
-                        dynamic m = msg.Data.AsDynamic();
+                        dynamic m = msg.Data;
                         m.exception = e;
                         m.ping = null;
                         return msg;
@@ -38,14 +38,14 @@ namespace Ruley.Redis
             try
             {
                 var elapsed = _server.Info();
-                dynamic payload = msg.Data.AsDynamic();
+                dynamic payload = msg.Data;
                 payload.exception = null;
                 payload.Ping = elapsed;
                 return msg;
             }
             catch (Exception e)
             {
-                dynamic m = msg.Data.AsDynamic();
+                dynamic m = msg.Data;
                 m.exception = e;
                 m.ping = null;
                 return msg;

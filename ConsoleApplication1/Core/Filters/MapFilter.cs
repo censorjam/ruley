@@ -1,50 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Runtime.Remoting.Contexts;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+using Ruley.Dynamic;
 
 namespace Ruley.Core.Filters
 {
-    public class PropertyConverter : JsonConverter
+    public class Mapping
     {
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
-        {
-            throw new Exception("not written");
-        }
-
-        private Property<T> Create<T>(object value)
-        {
-            return new Property<T>(value);
-        } 
-
-        public override object ReadJson(JsonReader reader, Type objectType, object existingValue,
-            JsonSerializer serializer)
-        {
-            MethodInfo method = typeof(PropertyConverter).GetMethod("Create", BindingFlags.Instance | BindingFlags.NonPublic);
-            MethodInfo generic = method.MakeGenericMethod(objectType.GenericTypeArguments[0]);
-
-            var returnValue = generic.Invoke(this, new object[] { reader.Value });
-            return returnValue;
-        }
-
-        public override bool CanRead
-        {
-            get { return true; }
-        }
-
-        public override bool CanConvert(Type objectType)
-        {
-            if (objectType.IsGenericType)
-            {
-                return objectType.GetGenericTypeDefinition() == typeof(Property<>);
-            }
-            return false;
-        }
+        public object In { get; set; }
+        public DataBag Out { get; set; }
     }
-
 
     public class MapFilter : InlineFilter
     {
@@ -56,6 +21,8 @@ namespace Ruley.Core.Filters
 
         [JsonProperty(Required = Required.Always)]
         public List<object[]> Mapping { get; set; }
+
+        public List<Mapping> Map { get; set; }
 
         public Property<object> Default { get; set; }
 
@@ -70,8 +37,10 @@ namespace Ruley.Core.Filters
             foreach (var mapping in Mapping)
             {
                 var s = mapping[0] == null ? "null" : mapping[0].ToString();
+                var value = msg.Data.GetValue(Field.Get(msg));
+                var valueString = value == null ? "null" :value.ToString();
 
-                if (msg.Data.GetValue(Field.Get(msg)).ToString() == s)
+                if (valueString == s)
                 {
                     msg.Data.SetValue(Destination.Get(msg), mapping[1]);
                     return msg;

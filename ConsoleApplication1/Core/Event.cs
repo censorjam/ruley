@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Dynamic;
+using Ruley.Dynamic;
 
 namespace Ruley.Core
 {
@@ -7,14 +7,19 @@ namespace Ruley.Core
     {
         public DateTime? Created { get; set; }
         public DateTime? Processed { get; set; }
-        public ExpandoObject Data { get; set; }
-        
-        private Event(ExpandoObject data)
+        public DataBag Data { get; set; }
+
+        public Event()
+        {
+            Data = new DataBag();
+        }
+
+        public Event(DataBag data)
         {
             Data = data;
         }
 
-        internal static Event Create(ExpandoObject data)
+        internal static Event Create(DataBag data)
         {
             return new Event(data);
         }

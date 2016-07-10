@@ -7,6 +7,7 @@ using Newtonsoft.Json.Linq;
 using Ruley.Core.Filters;
 using Ruley.Core.Inputs;
 using Ruley.Core.Outputs;
+using Ruley.Dynamic;
 
 namespace Ruley.Core
 {
@@ -30,7 +31,7 @@ namespace Ruley.Core
             {
                 var rule = JsonConvert.DeserializeObject<Rule>(JsonConvert.SerializeObject(Template, new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.Auto }), new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.Auto });
                 _rules.Add(rule);
-                rule.Parameters = obj.ToExpando();
+                rule.Parameters = DataBag.FromObject(obj);
                 rule.Name = FileName;
                 rule.Start();
             }
@@ -51,7 +52,7 @@ namespace Ruley.Core
         public List<Output> Outputs { get; set; }
         public List<Filter> Filters { get; set; }
         public event Action<Exception> OnError;
-        public ExpandoObject Parameters { get; set; }
+        public DataBag Parameters { get; set; }
 
         internal void Validate()
         {

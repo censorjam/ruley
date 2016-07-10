@@ -1,6 +1,5 @@
 using System;
-using System.Dynamic;
-using SmartFormat;
+using Ruley.Dynamic;
 
 namespace Ruley.Core.Outputs
 {
@@ -55,7 +54,7 @@ namespace Ruley.Core.Outputs
             }
         }
 
-        public T Get<T>(object value, ExpandoObject msg)
+        public T Get<T>(object value, DataBag msg)
         {
             //todo what about nulls default(T)?
 
