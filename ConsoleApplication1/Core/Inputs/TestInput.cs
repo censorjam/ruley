@@ -2,7 +2,7 @@
 
 namespace Ruley.Core.Inputs
 {
-    public class TestInput : PollingInput
+    public class TestInput : IntervalInput
     {
         private int _number = 1;
         private Random r = new Random();

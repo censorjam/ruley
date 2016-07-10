@@ -65,3 +65,4 @@ C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\SmartFormat.dl
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\SmartFormat.pdb
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\nunit.framework.dll
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\nunit.framework.xml
+C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Service\bin\Debug\rules\health-check-reporter.json

@@ -1,5 +1,4 @@
-﻿using System.Dynamic;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using Ruley.Core;
 using Ruley.Core.Filters;
 

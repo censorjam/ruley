@@ -29,29 +29,19 @@ namespace Ruley.Core.Outputs
                 return;
             }
 
+            if (str.StartsWith("[") && str.EndsWith("]"))
+            {
+                _type = PropertyType.Field;
+                _fieldName = str.Substring(1, str.Length - 2);
+            }
+
             if (!str.Contains("{"))
             {
                 _type = PropertyType.Value;
                 return;
             }
 
-            if (str.StartsWith("{") && str.EndsWith("}"))
-            {
-                var split = str.Split('{');
-                if (split.Length == 2)
-                {
-                    _type = PropertyType.Field;
-                    _fieldName = split[1].Replace("}", "");
-                }
-                else
-                {
-                    _type = PropertyType.Template;
-                }
-            }
-            else
-            {
-                _type = PropertyType.Template;
-            }
+            _type = PropertyType.Template;
         }
 
         public T Get<T>(object value, DynamicDictionary msg)
@@ -60,7 +50,7 @@ namespace Ruley.Core.Outputs
 
             if (_type == PropertyType.Value)
             {
-                return (T) value;
+                return (T)value;
             }
 
             if (_type == PropertyType.Field)
@@ -69,7 +59,7 @@ namespace Ruley.Core.Outputs
             }
 
             if (_type == PropertyType.Template)
-            { 
+            {
                 return (T)(object)Templater.ApplyTemplate(value as string, msg);
             }
 

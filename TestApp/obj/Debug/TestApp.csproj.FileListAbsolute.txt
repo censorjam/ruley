@@ -61,3 +61,4 @@ C:\Users\marcjones\Documents\GitHub\ruley\TestApp\bin\Debug\SmartFormat.dll
 C:\Users\marcjones\Documents\GitHub\ruley\TestApp\bin\Debug\SmartFormat.pdb
 C:\Users\marcjones\Documents\GitHub\ruley\TestApp\bin\Debug\nunit.framework.dll
 C:\Users\marcjones\Documents\GitHub\ruley\TestApp\bin\Debug\nunit.framework.xml
+C:\Users\marcjones\Documents\GitHub\ruley\TestApp\bin\Debug\rules\health-check-reporter.json

@@ -27,7 +27,8 @@ namespace Ruley.Core
         {
             //todo: autogenerate
             _preprocessor = new Preprocessor();
-            _preprocessor.Alias("@slack", "Ruley.Core.Outputs.SlackOutput, Ruley");
+            _preprocessor.Alias("@interval", "Ruley.Core.Inputs.IntervalInput, Ruley");
+            _preprocessor.Alias("@slack.out", "Ruley.Core.Outputs.SlackOutput, Ruley");
             _preprocessor.Alias("@map", "Ruley.Core.Filters.MapFilter, Ruley");
             _preprocessor.Alias("@throttle", "Ruley.Core.Filters.ThrottleFilter, Ruley");
             _preprocessor.Alias("@concat", "Ruley.Core.Filters.ConcatFilter, Ruley");
@@ -39,13 +40,13 @@ namespace Ruley.Core
             _preprocessor.Alias("@template", "Ruley.Core.Filters.TemplateFilter, Ruley");
             _preprocessor.Alias("@prev", "Ruley.Core.Filters.PrevFilter, Ruley");
             _preprocessor.Alias("@count", "Ruley.Core.Filters.CountFilter, Ruley");
-            _preprocessor.Alias("@slackf", "Ruley.Core.Filters.SlackFilter, Ruley");
+            _preprocessor.Alias("@slack", "Ruley.Core.Filters.SlackFilter, Ruley");
             _preprocessor.Alias("@passthrough", "Ruley.Core.Filters.PassThroughFilter, Ruley");
             
-            _preprocessor.Alias("@bus.pub", "Ruley.Core.Filters.MessageBusPublisherFilter, Ruley");
-            _preprocessor.Alias("@bus.sub", "Ruley.Core.Filters.MessageBusSubscriberFilter, Ruley");
+            _preprocessor.Alias("@bus.out", "Ruley.Core.Filters.MessageBusPublisherFilter, Ruley");
+            _preprocessor.Alias("@bus.in", "Ruley.Core.Filters.MessageBusSubscriberFilter, Ruley");
 
-            _preprocessor.Alias("@branch", "Ruley.Core.Filters.BranchFilter, Ruley");
+            _preprocessor.Alias("@if", "Ruley.Core.Filters.BranchFilter, Ruley");
             _preprocessor.Alias("@replayField", "Ruley.Core.Filters.ReplayFieldFilter, Ruley");
             _preprocessor.Alias("@regex", "Ruley.Core.Filters.RegexFilter, Ruley");
             _preprocessor.Alias("@distinct", "Ruley.Core.Filters.DistinctFilter, Ruley");

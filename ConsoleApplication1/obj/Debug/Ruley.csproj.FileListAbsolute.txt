@@ -66,3 +66,4 @@ C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\bin\Debug\rules\he
 C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\bin\Debug\DotLiquid.dll
 C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\bin\Debug\nunit.framework.dll
 C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\bin\Debug\nunit.framework.xml
+C:\Users\marcjones\Documents\GitHub\ruley\ConsoleApplication1\bin\Debug\rules\health-check-reporter.json

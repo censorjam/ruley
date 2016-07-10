@@ -86,6 +86,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Filters\DistinctTests.cs" />
+    <Compile Include="Core\Filters\Experimental\ReplaceFilter.cs" />
+    <Compile Include="Core\Filters\Experimental\StringComp.cs" />
     <Compile Include="Core\Filters\MergeFilter.cs" />
     <Compile Include="Core\Filters\Experimental\BlockFilter.cs" />
     <Compile Include="Core\Filters\Experimental\BranchFilter.cs" />
@@ -111,7 +113,6 @@
     <Compile Include="Core\Filters\SkipFIlter.cs" />
     <Compile Include="Core\Filters\Experimental\SlackFilter.cs" />
     <Compile Include="Core\Outputs\Logger.cs" />
-    <Compile Include="Core\RequiredAttribute.cs" />
     <Compile Include="Core\Property.cs" />
     <Compile Include="Core\Filters\Experimental\TemplateFilter.cs" />
     <Compile Include="Core\Outputs\TemplatedPropertyGetter.cs" />
@@ -124,7 +125,7 @@
     <Compile Include="Core\Outputs\Component.cs" />
     <Compile Include="Core\MessageBus.cs" />
     <Compile Include="Core\Preprocessor.cs" />
-    <Compile Include="Core\Outputs\SlackClient.cs" />
+    <Compile Include="Core\Helpers\SlackClient.cs" />
     <Compile Include="Core\Outputs\SlackOutput.cs" />
     <Compile Include="Core\RuleManager.cs" />
     <Compile Include="Core\RuleParseException.cs" />
@@ -136,7 +137,7 @@
     <Compile Include="Core\Filters\Experimental\Filter.cs" />
     <Compile Include="Core\Inputs\Input.cs" />
     <Compile Include="Core\Outputs\Output.cs" />
-    <Compile Include="Core\Inputs\PollingInput.cs" />
+    <Compile Include="Core\Inputs\IntervalInput.cs" />
     <Compile Include="Core\Templating.cs" />
     <Compile Include="Dynamic\DynamicDictionary.cs" />
     <Compile Include="Dynamic\JsonHelper.cs" />
@@ -155,7 +156,9 @@
     <None Include="rules\health-check-redis.json" />
     <None Include="rules\json2 - Copy.json" />
     <None Include="rules\json2.json" />
-    <None Include="rules\health-check-reporter.json" />
+    <None Include="rules\health-check-reporter.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="rules\health-check-rabbitmq.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

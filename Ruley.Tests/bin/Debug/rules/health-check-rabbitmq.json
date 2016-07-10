@@ -30,15 +30,14 @@
 
     "template": {
         "input": {
-            "$type": "Ruley.Core.Inputs.PollingInput, Ruley",
-            "interval": 5000
+            "$type": "@interval",
+            "period": 5000
         },
 
         "filters": [
             {
-                "$type": "@template",
-                "template": "http://{host}:{port}/api/aliveness-test/{vhost}",
-                "destination": "url"
+                "$type": "@merge",
+                "data": { "url": "http://{host}:{port}/api/aliveness-test/{vhost}" }
             },
             {
                 "$type": "@http",
@@ -56,18 +55,13 @@
                     [ 200, "Healthy" ]
                 ],
                 "map": [
-                    {
-                        "in": 200,
-                        "out": {
-                            "status": "Healthy"
-                        }
-                    }
+                    { "key": 200, "value": { "status": "Healthy" } }
                 ],
                 "default": "Unhealthy"
             },
             {
                 "$type": "@distinct",
-                "value": "{status}"
+                "field": "status"
             },
             {
                 "$type": "@merge",
@@ -77,7 +71,7 @@
                 }
             },
             {
-                "$type": "@bus.pub",
+                "$type": "@bus.out",
                 "key": "health-check"
             }
         ],

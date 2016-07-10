@@ -29,3 +29,4 @@ C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Redis\bin\Debug\SmartFormat.dll
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Redis\bin\Debug\SmartFormat.pdb
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Redis\bin\Debug\nunit.framework.dll
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Redis\bin\Debug\nunit.framework.xml
+C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Redis\bin\Debug\rules\health-check-reporter.json

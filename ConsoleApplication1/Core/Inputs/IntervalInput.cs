@@ -7,10 +7,10 @@ using Ruley.Dynamic;
 
 namespace Ruley.Core.Inputs
 {
-    public class PollingInput : Input
+    public class IntervalInput : Input
     {
         [JsonProperty(Required = Required.Always)]
-        public int Interval { get; set; }
+        public int Period { get; set; }
 
         private Timer _timer;
 
@@ -20,7 +20,7 @@ namespace Ruley.Core.Inputs
             {
                 OnTick();
             });
-            _timer.Change(0, Interval);
+            _timer.Change(0, Period);
         }
 
         public override void Dispose()
@@ -30,7 +30,7 @@ namespace Ruley.Core.Inputs
 
         public override void ValidateComposition()
         {
-            if (Interval < 0)
+            if (Period < 0)
                 throw new Exception("Interval cannot be negative");
         }
 

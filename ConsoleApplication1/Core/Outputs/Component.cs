@@ -23,6 +23,8 @@ namespace Ruley.Core.Outputs
 
         public Logger Logger { get; set; }
 
+        public Property<bool> If { get; set; } 
+
         public virtual void Dispose()
         {
         }

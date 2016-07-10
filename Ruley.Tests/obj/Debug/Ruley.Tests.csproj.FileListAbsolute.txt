@@ -47,3 +47,4 @@ C:\Users\marc.jones\Desktop\GitHub\ruley\Ruley.Tests\obj\Debug\Ruley.Tests.dll
 C:\Users\marc.jones\Desktop\GitHub\ruley\Ruley.Tests\obj\Debug\Ruley.Tests.pdb
 C:\Users\marc.jones\Desktop\GitHub\ruley\Ruley.Tests\bin\Debug\rules\json3.json
 C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Tests\bin\Debug\rules\health-check-rabbitmq.json
+C:\Users\marcjones\Documents\GitHub\ruley\Ruley.Tests\bin\Debug\rules\health-check-reporter.json
