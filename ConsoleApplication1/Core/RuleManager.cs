@@ -54,11 +54,8 @@ namespace Ruley.Core
             _preprocessor.Alias("@http", "Ruley.Core.Filters.HttpFilter, Ruley");
 
             _preprocessor.Alias("@redis.ping", "Ruley.Redis.RedisPing, Ruley.Redis");
-
-            
-
             _preprocessor.Alias("@rabbitmq.in", "Ruley.RabbitMq.RabbitMqInput, Ruley.RabbitMq");
-
+            _preprocessor.Alias("@consolef", "Ruley.Core.Filters.ConsoleFilter, Ruley");
             _preprocessor.Alias("@console", "Ruley.Core.Outputs.ConsoleOutput, Ruley");
 
             _preprocessor.Alias("@slack_url", "https://hooks.slack.com/services/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");

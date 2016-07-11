@@ -7,24 +7,18 @@ namespace Ruley.Core.Filters
 {
     public class Mapping
     {
-        public object In { get; set; }
-        public DynamicDictionary Out { get; set; }
+        public object Key { get; set; }
+        public DynamicDictionary Value { get; set; }
     }
 
     public class MapFilter : InlineFilter
     {
         [JsonProperty(Required = Required.Always)]
-        public Property<string> Field { get; set; }
-
-        [JsonProperty(Required = Required.Always)]
-        public Property<string> Destination { get; set; }
-
-        [JsonProperty(Required = Required.Always)]
-        public List<object[]> Mapping { get; set; }
+        public Property<string> Value { get; set; }
 
         public List<Mapping> Map { get; set; }
 
-        public Property<object> Default { get; set; }
+        public DynamicDictionary Default { get; set; }
 
         public object Test { get; set; }
 
@@ -34,15 +28,15 @@ namespace Ruley.Core.Filters
 
         public override Event Apply(Event msg)
         {
-            foreach (var mapping in Mapping)
+            foreach (var mapping in Map)
             {
-                var s = mapping[0] == null ? "null" : mapping[0].ToString();
-                var value = msg.Data.GetValue(Field.Get(msg));
+                var s = mapping.Key == null ? "null" : mapping.Key.ToString();
+                var value = Value.GetValue(msg);
                 var valueString = value == null ? "null" :value.ToString();
 
                 if (valueString == s)
                 {
-                    msg.Data.SetValue(Destination.Get(msg), mapping[1]);
+                    msg.Data.Merge(mapping.Value);
                     return msg;
                 }
             }
@@ -50,7 +44,7 @@ namespace Ruley.Core.Filters
             if (Default == null)
                 throw new Exception("No match and no default value set");
 
-            msg.Data.SetValue(Destination.Get(msg), Default.Get(msg));
+            msg.Data.Merge(Default);
             return msg;
         }
     }

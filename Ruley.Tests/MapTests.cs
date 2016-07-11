@@ -3,6 +3,7 @@ using System.Dynamic;
 using NUnit.Framework;
 using Ruley.Core;
 using Ruley.Core.Filters;
+using Ruley.Dynamic;
 
 namespace Ruley.Tests
 {
@@ -14,17 +15,18 @@ namespace Ruley.Tests
         {
             var filter = new MapFilter()
             {
-                Field = "source",
-                Mapping = new List<object[]>() { new object[] { "a1", "b1" } },
-                Destination = "field"
+                Value = "[source]",
+                Map = new List<Mapping>()
+                    { 
+                        new Mapping() { Key = "a1", Value = DynamicDictionary.Create("{'field':'b1'}") }
+                    }
             };
 
             var msg = new Event();
             msg.Data.SetValue("source", "a1");
 
             msg = filter.Apply(msg);
-            Assert.AreEqual("b1", msg.Data.GetValue("field"));
-            //Assert.IsFalse(msg.HasErrors());
+            Assert.AreEqual("b1", msg.Data["field"]);
         }
 
         [Test]
@@ -32,14 +34,14 @@ namespace Ruley.Tests
         {
             var filter = new MapFilter()
             {
-                Field = "source",
-                Mapping = new List<object[]>()
-                    {
-                        new object[] {"a1", "b1"},
-                        new object[] {"a2", "b2"},
-                        new object[] {"a3", "b3"}
-                    },
-                Destination = "field"
+                Value = "[source]",
+                //Mapping = new List<object[]>()
+                //    {
+                //        new object[] {"a1", "b1"},
+                //        new object[] {"a2", "b2"},
+                //        new object[] {"a3", "b3"}
+                //    },
+                //Destination = "field"
             };
 
             Event msg = new Event();
@@ -55,22 +57,20 @@ namespace Ruley.Tests
         {
             var filter = new MapFilter()
             {
-                Field = "source",
-                Mapping = new List<object[]>() 
+                Value = "[source]",
+                Map = new List<Mapping>()
                     { 
-                        new object[] { 1, "one" }, 
-                        new object[] { 2, "two" }, 
-                        new object[] { 3, "three" } 
-                    },
-                Destination = "field"
+                        new Mapping() { Key = 1, Value = DynamicDictionary.Create("{'x':'one'}") },
+                        new Mapping() { Key = 2, Value = DynamicDictionary.Create("{'x':'two'}") },
+                        new Mapping() { Key = 3, Value = DynamicDictionary.Create("{'x':'three'}") }
+                    }
             };
 
             Event msg = new Event();
             msg.Data.SetValue("source", 2);
 
             msg = filter.Apply(msg);
-            Assert.AreEqual("two", msg.Data.GetValue("field"));
-            //Assert.IsFalse(msg.HasErrors());
+            Assert.AreEqual("two", msg.Data["x"]);
         }
 
         [Test]
@@ -78,13 +78,12 @@ namespace Ruley.Tests
         {
             var filter = new MapFilter()
             {
-                Field = "source",
-                Mapping = new List<object[]>() 
+                Value = "[source]",
+                Map = new List<Mapping>()
                     { 
-                        new object[] { true, "yes" }, 
-                        new object[] { false, "no" }, 
-                    },
-                Destination = "field"
+                        new Mapping() { Key = true, Value = DynamicDictionary.Create("{'field':'yes'}") },
+                        new Mapping() { Key = false, Value = DynamicDictionary.Create("{'field':'no'}") },
+                    }
             };
 
             Event msg = new Event();
@@ -104,14 +103,14 @@ namespace Ruley.Tests
         {
             var filter = new MapFilter()
             {
-                Field = "source",
-                Mapping = new List<object[]>()
-                {
-                    new object[] {"a1", "b1"},
-                    new object[] {"a2", "b2"},
-                },
-                Destination = "field",
-                Default = "default"
+                Value = "[source]",
+                //Mapping = new List<object[]>()
+                //{
+                //    new object[] {"a1", "b1"},
+                //    new object[] {"a2", "b2"},
+                //},
+                //Destination = "field",
+                //Default = "default"
             };
 
             Event msg = new Event();
@@ -127,13 +126,13 @@ namespace Ruley.Tests
         {
             var filter = new MapFilter()
             {
-                Field = "source",
-                Mapping = new List<object[]>()
-                    {
-                        new object[] {"a1", "b1"},
-                        new object[] {"a2", "b2"},
-                    },
-                Destination = "field"
+                Value = "[source]",
+                //Mapping = new List<object[]>()
+                //    {
+                //        new object[] {"a1", "b1"},
+                //        new object[] {"a2", "b2"},
+                //    },
+                //Destination = "field"
             };
 
             Event ev = new Event();

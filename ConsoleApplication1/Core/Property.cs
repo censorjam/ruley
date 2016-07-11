@@ -99,5 +99,13 @@ namespace Ruley.Core
 
             return _getter.Get<T>(Value, @event.Data);
         }
+
+        public object GetValue(Event @event)
+        {
+            if (@event == null)
+                throw new ArgumentNullException("event");
+
+            return _getter.GetValue(Value, @event.Data);
+        }
     }
 }

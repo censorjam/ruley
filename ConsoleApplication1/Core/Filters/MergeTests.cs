@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System.Runtime.InteropServices.WindowsRuntime;
+using NUnit.Framework;
 using Ruley.Dynamic;
 
 namespace Ruley.Core.Filters
@@ -76,7 +77,7 @@ namespace Ruley.Core.Filters
 
         //todo should apply templating recursively
         [Test]
-        public void Nested_Merge()
+        public void Nested_Source_Merge()
         {
             var merge = new MergeFilter();
             
@@ -93,6 +94,60 @@ namespace Ruley.Core.Filters
             Assert.IsTrue(data.prop2 != null);
             Assert.AreEqual(101, data.prop2.prop3);
         }
+
+        [Test]
+        public void Nested_Dest_Merge()
+        {
+            var merge = new MergeFilter();
+
+            dynamic mergeData = new DynamicDictionary();
+            mergeData.prop2 = new DynamicDictionary();
+            mergeData.prop2.prop3 = "[p1.p2]";
+            merge.Data = mergeData;
+
+            var ev = new Event();
+            dynamic d = ev.Data;
+            d.p1 = new DynamicDictionary();
+            d.p1.p2 = "test";
+            merge.Apply(ev);
+
+            dynamic data = ev.Data;
+
+            Assert.IsTrue(data.prop2 != null);
+            Assert.AreEqual("test", data.prop2.prop3);
+        }
+
+        [Test]
+        public void Nested_Clashing_Merge()
+        {
+            var merge = new MergeFilter();
+
+            dynamic mergeData = new DynamicDictionary();
+            mergeData.p1 = new DynamicDictionary();
+            mergeData.p1.p3 = "abc";
+            merge.Data = mergeData;
+
+            var ev = new Event();
+            dynamic d = ev.Data;
+            d.p1 = new DynamicDictionary();
+            d.p1.p2 = "def";
+            merge.Apply(ev);
+
+            dynamic data = ev.Data;
+
+            Assert.AreEqual("def", data.p1.p2);
+            Assert.AreEqual("abc", data.p1.p3);
+        }
+
+        //arrays?
+
+        //public DynamicDictionary Parse(DynamicDictionary sourceData, DynamicDictionary newData)
+        //{
+        //    foreach (var VARIABLE in newData)
+        //    {
+                
+        //    }
+        //}
 
         [Test]
         public void Nested_Templated_Merge()

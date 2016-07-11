@@ -87,6 +87,7 @@
   <ItemGroup>
     <Compile Include="Core\Filters\DistinctTests.cs" />
     <Compile Include="Core\Filters\Experimental\ReplaceFilter.cs" />
+    <Compile Include="Core\Filters\Experimental\StateFilter.cs" />
     <Compile Include="Core\Filters\Experimental\StringComp.cs" />
     <Compile Include="Core\Filters\MergeFilter.cs" />
     <Compile Include="Core\Filters\Experimental\BlockFilter.cs" />
@@ -112,6 +113,7 @@
     <Compile Include="Core\Filters\Experimental\ReplayFieldFilter.cs" />
     <Compile Include="Core\Filters\SkipFIlter.cs" />
     <Compile Include="Core\Filters\Experimental\SlackFilter.cs" />
+    <Compile Include="Core\Filters\Experimental\ConsoleFilter.cs" />
     <Compile Include="Core\Outputs\Logger.cs" />
     <Compile Include="Core\Property.cs" />
     <Compile Include="Core\Filters\Experimental\TemplateFilter.cs" />

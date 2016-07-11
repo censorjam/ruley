@@ -33,6 +33,7 @@ namespace Ruley.Core.Outputs
             {
                 _type = PropertyType.Field;
                 _fieldName = str.Substring(1, str.Length - 2);
+                return;
             }
 
             if (!str.Contains("{"))
@@ -61,6 +62,26 @@ namespace Ruley.Core.Outputs
             if (_type == PropertyType.Template)
             {
                 return (T)(object)Templater.ApplyTemplate(value as string, msg);
+            }
+
+            throw new Exception("error");
+        }
+
+        public object GetValue(object value, DynamicDictionary msg)
+        {
+            if (_type == PropertyType.Value)
+            {
+                return value;
+            }
+
+            if (_type == PropertyType.Field)
+            {
+                return msg.GetValue(_fieldName);
+            }
+
+            if (_type == PropertyType.Template)
+            {
+                return Templater.ApplyTemplate(value as string, msg);
             }
 
             throw new Exception("error");

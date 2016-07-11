@@ -18,44 +18,24 @@
         "filters": [
             {
                 "$type": "@map",
-                "field": "status",
-                "destination": "emoji",
-                "mapping": [
-                    [ "Healthy", ":ok:" ]
+                "value": "[status]",
+                "map": [
+                    { "key": "Healthy", "value": { "emoji": ":ok:", "info": null, "sendSlack": false } }
                 ],
-                "default": ":ambulance:"
-            },
-            {
-                "$type": "@map",
-                "field": "status",
-                "destination": "infoMessage",
-                "mapping": [
-                    [ "Healthy", null ]
-                ],
-                "default": "\n{info}"
-            },
-            {
-                "$type": "@map",
-                "field": "status",
-                "destination": "sendSlack",
-                "mapping": [
-                    [ "Healthy", false ]
-                ],
-                "default": true
+                "default": { "emoji": ":ok:", "info": null, "sendSlack": true }
             },
             {
                 "$type": "@if",
                 "field": "sendSlack",
                 "then": {
                     "$type": "@slack",
-                    "enabled": true,
                     "webHookUrl": "@slack_url",
                     "username": "health-bot",
                     "emoji": "{emoji}",
                     "message": "*{name}* on {host} is *{status}*{infoMessage}"
                 },
                 "else": {
-                    "$type": "@console",
+                    "$type": "@consolef",
                     "enabled": true
                 }
             }

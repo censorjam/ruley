@@ -49,19 +49,17 @@
             },
             {
                 "$type": "@map",
-                "field": "statusCode",
-                "destination": "status",
-                "mapping": [
-                    [ 200, "Healthy" ]
-                ],
+                "value": "[statusCode]",
                 "map": [
                     { "key": 200, "value": { "status": "Healthy" } }
                 ],
-                "default": "Unhealthy"
+                "default": {
+                    "status": "Unhealthy"
+                }
             },
             {
                 "$type": "@distinct",
-                "field": "status"
+                "value": "[status]"
             },
             {
                 "$type": "@merge",
