@@ -1,0 +1,172 @@
+﻿{
+    "debug": true,
+
+    "parameters": [
+        {
+            "kibanaHost": "t1aplog004.spreadex.com"
+        }
+    ],
+
+    "template": {
+        "input": {
+            "$type": "@rabbitmq.in",
+            "connectionString": "host=t1apmon001.spreadex.com;persistentMessages=false;username=rabbitadmin;password=qwe123;product=Ruley",
+            "queueName": "error-reporting",
+            "exchangeName": "Logs",
+            "exchangeType": "topic"
+        },
+
+        "filters": [
+            {
+                "$type": "@uppercase",
+                "value": "[level]",
+                "destination": "logType"
+            },
+            {
+                "$type": "@uppercase",
+                "value": "[appName]",
+                "destination": "app"
+            },
+            {
+                "$type": "@map",
+                "value": "[logType]",
+                "map": [
+                    {
+                        "key": "ERROR",
+                        "value": { "alert": true }
+                    },
+                    {
+                        "key": "WARN",
+                        "value": { "alert": false }
+                    },
+                    {
+                        "key": "ALERT",
+                        "value": { "alert": true }
+                    },
+                    {
+                        "key": "$default",
+                        "value": { "alert": false }
+                    }
+                ]
+            },
+            {
+                "$type": "@if",
+                "value": "[alert]"
+            },
+            {
+                "$type": "@map",
+                "value": "[app]",
+                "map": [
+                    { "key": "SPORTS.MODELBROKERWEB", "value": { "alert": true, "team": "Sports" } },
+                    { "key": "PE.PRICEENGINE", "value": { "alert": true, "team": "Fins" } },
+                    { "key": "OTP.MYACCOUNT.WEB", "value": { "alert": true, "team": "Fins" } },
+                    { "key": "OTP.SPORTS.WEB", "value": { "alert": true, "team": "Sports" } },
+                    { "key": "CMSWEBUSERCONTROLS", "value": { "alert": false, "team": "Sports" } },
+                    { "key": "FINS.UI.WEB", "value": { "alert": true, "team": "Fins" } },
+                    { "key": "FINS.MODELBROKERWEB", "value": { "alert": true, "team": "Fins" } },
+                    { "key": "FINS.UI.API", "value": { "alert": true, "team": "Fins" } },
+                    { "key": "OTP.FINS.WEB", "value": { "alert": true, "team": "Fins" } },
+                    { "key": "SPORTS.APPSERVER", "value": { "alert": true, "team": "Sports" } },
+                    { "key": "MOBILE.SPORTS.WEB", "value": { "alert": true, "team": "Sports" } },
+                    { "key": "PAYMENT.TRANSACTIONSERVER", "value": { "alert": true, "team": "Fins" } },
+                    { "key": "CT3.COMET", "value": { "alert": false, "team": "Sports" } },
+                    { "key": "CMSAPPSERVER", "value": { "alert": false, "team": "Sports" } },
+                    { "key": "INSTRUMENTSERVICE", "value": { "alert": false, "team": "Fins" } },
+                    { "key": "PAYMENT.APPSERVER", "value": { "alert": true, "team": "Fins" } },
+                    { "key": "WEBTRACKERWEB", "value": { "alert": false, "team": "Sports" } },
+                    { "key": "EXCESS.SPORTS.APPSERVER", "value": { "alert": true, "team": "Sports" } },
+                    { "key": "CASINO.APPSERVER", "value": { "alert": false, "team": "Sports" } },
+                    { "key": "OTP.CASINO.WEB", "value": { "alert": false, "team": "Sports" } },
+                    { "key": "SPORTS.CORESERVICE-MC", "value": { "alert": true, "team": "Sports" } },
+                    { "key": "EXCESS.FINS.APPSERVER", "value": { "alert": true, "team": "Fins" } },
+                    { "key": "MYACCOUNT.APPSERVER.FINS", "value": { "alert": true, "team": "Fins" } },
+                    { "key": "VIEWBROKER.SPORTS", "value": { "alert": true, "team": "Sports" } },
+                    { "key": "MYACCOUNT.APPSERVER.SPORTS", "value": { "alert": true, "team": "Sports" } },
+                    { "key": "REDIS.FINSENTITYDISPATCHER", "value": { "alert": true, "team": "Fins" } },
+                    { "key": "FINS.MODELBROKER", "value": { "alert": false, "team": "Fins" } },
+                    { "key": "SPORTS.CORESERVICE", "value": { "alert": true, "team": "Sports" } },
+                    { "key": "OTCS.FINS", "value": { "alert": true, "team": "Fins" } },
+                    { "key": "EXCESS.BACKOFFICE.APPSERVER", "value": { "alert": true, "team": "Fins" } },
+                    { "key": "REDIS.FINS.FINSPRICINGSTREAMER", "value": { "alert": true, "team": "Fins" } },
+                    { "key": "FINS.APPSERVER", "value": { "alert": true, "team": "Fins" } },
+                    { "key": "FINS.CHARTING.AGGREGATION", "value": { "alert": true, "team": "Fins" } },
+                    { "key": "EMIR.APPSERVER", "value": { "alert": false, "team": "Fins" } },
+                    { "key": "CREDITCHECK.APPSERVER", "value": { "alert": true, "team": "Fins" } },
+                    { "key": "CLIENTCOMMUNICATION.SERVICE", "value": { "alert": true, "team": "Fins" } },
+                    { "key": "OAO.WEB", "value": { "alert": true, "team": "Fins" } },
+                    { "key": "FINS.CORESERVICE", "value": { "alert": true, "team": "Fins" } },
+                    { "key": "CASINO.MODELBROKERWEB", "value": { "alert": false, "team": "Sports" } },
+                    { "key": "CUSTOMERSERVICE", "value": { "alert": true, "team": "Sports" } },
+                    { "key": "LOGSHIPPER", "value": { "alert": false, "team": "Devops" } },
+                    { "key": "REDIS.FINS.DATACALCULATION", "value": { "alert": true, "team": "Fins" } },
+                    { "key": "CT3.COMET.FINS", "value": { "alert": false, "team": "Fins" } },
+                    { "key": "MARGINSERVICE2", "value": { "alert": true, "team": "Fins" } },
+                    { "key": "SPORTS.PE.PRICEENGINE", "value": { "alert": true, "team": "Sports" } },
+                    { "key": "OTCS.SPORTS", "value": { "alert": true, "team": "Sports" } },
+                    { "key": "PE.DATASYNC-SLOW", "value": { "alert": true, "team": "Fins" } },
+                    { "key": "SPRINTMARKETENGINE", "value": { "alert": true, "team": "Fins" } },
+                    { "key": "MOBILE.FINS.DEVICE", "value": { "alert": false, "team": "Fins" } },
+                    { "key": "DIVIDENDSSERVICE", "value": { "alert": false, "team": "Fins" } },
+                    { "key": "SPORTS.DATAFEED.WEB", "value": { "alert": false, "team": "Sports" } },
+                    { "key": "CDS.SPORTS", "value": { "alert": true, "team": "Sports" } },
+                    { "key": "CT3 PROXY", "value": { "alert": false, "team": "Sports" } },
+                    { "key": "PUSHSPORTSQUERY", "value": { "alert": false, "team": "Sports" } },
+                    { "key": "CASINO.NETENT.WEB", "value": { "alert": false, "team": "Sports" } },
+                    { "key": "SESSIONSERVERV2", "value": { "alert": true, "team": "Fins" } },
+                    { "key": "BUSINESSAPPSERVER", "value": { "alert": true, "team": "Sports" } },
+                    { "key": "OAO.APPSERVER", "value": { "alert": true, "team": "Fins" } },
+                    { "key": "WEBMESSAGE", "value": { "alert": false, "team": "Sports" } },
+                    { "key": "CT3.COMET.SPORTS", "value": { "alert": false, "team": "Sports" } },
+                    { "key": "CT3PROXY", "value": { "alert": false, "team": "Sports" } },
+                    { "key": "REDIS.FINS.DBSTREAMER", "value": { "alert": true, "team": "Fins" } },
+                    { "key": "TICKSERVER", "value": { "alert": true, "team": "Fins" } },
+                    { "key": "FINS.BUSINESS.APPSERVER", "value": { "alert": true, "team": "Fins" } },
+                    { "key": "PE.IGFEED", "value": { "alert": true, "team": "Fins" } },
+                    { "key": "SPORTS.PE.PESS", "value": { "alert": true, "team": "Sports" } },
+                    { "key": "WEBMESSAGEAPPSERVER", "value": { "alert": false, "team": "Sports" } },
+                    { "key": "$default", "value": { "alert": true, "team": "Sports" } },
+                ]
+            },
+            {
+                "$type": "@map",
+                "value": "[team]",
+                "map": [
+                    { "key": "Fins", "value": { "sendTo": "justin.mandy@spreadex.com;john.quinn@spreadex.com;darko.roje@spreadex.com;elizabeth.symmons@spreadex.com;alistair.clark@spreadex.com;Erik.Bezak@spreadex.com;devops@spreadex.com;" } },
+                    { "key": "Sports", "value": { "sendTo": "Kishore.Sivaraman@spreadex.com;paulo.santos@spreadex.com;michael.carroll@spreadex.com;kristan.wolfman@spreadex.com;maisie.sadler@spreadex.com;martin.davies@spreadex.com;karl.fenech@spreadex.com;devops@spreadex.com" } }
+                ]
+            },
+            {
+                "$type": "@if",
+                "value": "[alert]"
+            },
+            {
+                "$type": "@groupby",
+                "key": "{app}-{logType}-{host}",
+                "filter": {
+                    "$type": "@throttle",
+                    "interval": 1000,
+                    "countField": "messageCount"
+                }
+            },
+            {
+                "$type": "@merge",
+                "data": { "kibanaUrl": "https://{kibanaHost}/app/kibana#/discover?_g=(refreshInterval:(display:Off,pause:!f,value:0),time:(from:now-15m,mode:quick,to:now))&_a=(columns:!(_source),index:'filebeat-*',interval:auto,query:(query_string:(analyze_wildcard:!t,query:'level:{level}%20AND%20appName:{appName}')),sort:!('@timestamp',desc))" }
+            },
+            {
+                "$type": "@email",
+                "smtp": "smtp.spreadex.com",
+                "from": "{host}@spreadex.com",
+                "to": "[sendTo]",
+                "subject": "UAT: {app} - {level}",
+                "body": "<font face='arial' style='font-size:12px; white-space: nowrap'>Logged at: {loggedAt} (x{messageCount} messages)<br/><br/><a href=\"{kibanaUrl}\">Click here for kibana</a><br/><br/><hr><pre>{message}</pre></font>"
+            },
+        ],
+
+        "outputs": [
+            {
+                "$type": "@console",
+                "enabled": true
+            }
+        ]
+    }
+}

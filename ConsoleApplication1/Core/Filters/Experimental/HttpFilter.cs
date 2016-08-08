@@ -2,6 +2,7 @@
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Web;
 
 namespace Ruley.Core.Filters
 {
@@ -11,6 +12,8 @@ namespace Ruley.Core.Filters
         public Property<string> Username { get; set; }
         public Property<string> Password { get; set; }
         public Property<string> Authentication { get; set; }
+        public Property<bool> UrlEncode { get; set; }
+
         public Property<long> Timeout { get; set; }
 
         public override Event Apply(Event ev)
@@ -29,7 +32,17 @@ namespace Ruley.Core.Filters
                 dynamic data = ev.Data;
                 try
                 {
-                    var url = Url.Get(ev);
+                    string url;
+                    //doesnt work
+                    //if (UrlEncode == null || UrlEncode.Get(ev))
+                    //{
+                    //    url = HttpUtility.UrlEncode(Url.Get(ev));
+                    //}
+                    //else
+                    {
+                        url = Url.Get(ev);
+                    }
+
                     var response = client.GetAsync(url).Result;
                     data.statusCode = (long)response.StatusCode;
                     data.gotResponse = true;

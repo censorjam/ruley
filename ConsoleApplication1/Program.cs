@@ -1,5 +1,6 @@
 ﻿using System;
 using Ruley.Core;
+using Ruley.Core.Outputs;
 
 namespace Ruley
 {
@@ -10,6 +11,7 @@ namespace Ruley
     //todo sub folders with inherited global.js files
     //todo auto validation with [required]
     //todo [Default()] property attribute?
+    //todo add some kind of OnFirst to filters
 
     public interface IRuleyLogger
     {

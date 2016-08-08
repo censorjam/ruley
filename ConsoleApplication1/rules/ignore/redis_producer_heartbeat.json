@@ -1,0 +1,76 @@
+﻿{
+    "name": "test rule",
+    "debug": true,
+
+    "template": {
+
+        "input": {
+            "$type": "Ruley.Redis.RedisBusInput, Ruley.Redis",
+            "channel": "HeartBeat",
+            "connectionString": "localhost"
+        },
+
+        "filters": [
+            {
+                "$type": "@groupby",
+                "key": "[Name]",
+                "filters": [
+                    {
+                        "$type": "@throttle",
+                        "interval": 5000,
+                        "countField": "count",
+                        "allowEmpty": true
+                    },
+                    {
+                        "$type": "@replayField",
+                        "field": "Name"
+                    },
+                    {
+                        "$type": "@conditional",
+                        "field": "count",
+                        "level": 0,
+                        "match": ">",
+                        "destination": "IsAlive"
+                    },
+                    {
+                        "$type": "@prev",
+                        "destination": "prev"
+                    },
+                    {
+                        "$type": "@map",
+                        "value": "[IsAlive]",
+                        "map": [
+                            {
+                                "key": true,
+                                "value": { "status": "OK", "emoji": ":high_brightness:" }
+                            },
+                            {
+                                "key": false,
+                                "value": { "status": "Critical", "emoji": ":no_entry:" }
+                            }
+                        ]
+                    },
+                    {
+                        "$type": "@distinct",
+                        "value": "[IsAlive]"
+                    },
+                    {
+                        "$type": "@slack",
+                        "webHookUrl": "@slack_url",
+                        "channel": "#test-alerts",
+                        "username": "{Name}",
+                        "emoji": "{emoji}",
+                        "message": "Status is *{status}*{infoMessage}"
+                    }
+                ]
+            }
+        ],
+
+        "outputs": [
+            {
+                "$type": "@console",
+                "enabled": true
+            }
+        ]
+    }
+}

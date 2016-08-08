@@ -10,6 +10,9 @@ namespace Ruley.Tests
     [TestFixture]
     public class MapTests
     {
+        //add tests for regex
+        //add test for ignorecase
+
         [Test]
         public void Single_Value_String_Map()
         {

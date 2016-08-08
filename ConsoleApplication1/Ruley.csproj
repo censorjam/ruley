@@ -77,6 +77,7 @@
       <HintPath>..\packages\System.Reactive.Windows.Threading.3.0.0\lib\net45\System.Reactive.Windows.Threading.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -85,7 +86,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Packages\LibLog.4.2\LibLog.cs" />
+    <Compile Include="Core\Filters\EmailFilter.cs" />
+    <Compile Include="Core\Filters\Experimental\GraphiteFilter.cs" />
     <Compile Include="Core\Filters\DistinctTests.cs" />
+    <Compile Include="Core\Filters\Experimental\LowerCaseFilter.cs" />
     <Compile Include="Core\Filters\Experimental\ReplaceFilter.cs" />
     <Compile Include="Core\Filters\Experimental\StateFilter.cs" />
     <Compile Include="Core\Filters\Experimental\StringComp.cs" />
@@ -114,11 +119,11 @@
     <Compile Include="Core\Filters\SkipFIlter.cs" />
     <Compile Include="Core\Filters\Experimental\SlackFilter.cs" />
     <Compile Include="Core\Filters\Experimental\ConsoleFilter.cs" />
+    <Compile Include="Core\Helpers\Payload.cs" />
     <Compile Include="Core\Outputs\Logger.cs" />
     <Compile Include="Core\Property.cs" />
     <Compile Include="Core\Filters\Experimental\TemplateFilter.cs" />
     <Compile Include="Core\Outputs\TemplatedPropertyGetter.cs" />
-    <Compile Include="Core\ExpandoExtensions.cs" />
     <Compile Include="Core\Filters\Experimental\ConcatenateFilter.cs" />
     <Compile Include="Core\Filters\Experimental\Jsonify.cs" />
     <Compile Include="Core\Filters\Experimental\MapFilter.cs" />
@@ -151,25 +156,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="rules\error_message_alerting.json" />
     <None Include="packages.config" />
-    <None Include="rules\global.json" />
-    <None Include="rules\health-check-rabbitmq - Copy.json" />
-    <None Include="rules\health-check-redis.json" />
-    <None Include="rules\json2 - Copy.json" />
-    <None Include="rules\json2.json" />
-    <None Include="rules\health-check-reporter.json">
+    <None Include="rules\ignore\global.json" />
+    <None Include="rules\ignore\health-check-redis.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="rules\health-check-rabbitmq.json">
+    <None Include="rules\ignore\json2 - Copy.json" />
+    <None Include="rules\ignore\json2.json" />
+    <None Include="rules\ignore\health-check-reporter.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="rules\json3.json" />
-    <None Include="rules\_empty.json" />
+    <None Include="rules\ignore\health-check-rabbitmq.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="rules\ignore\redis_producer_heartbeat.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="rules\working\log_files.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="rules\ignore\_empty.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="rules\TextFile1.txt" />
+    <Content Include="rules\graphite.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

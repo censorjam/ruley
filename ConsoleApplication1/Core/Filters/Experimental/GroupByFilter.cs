@@ -9,7 +9,7 @@ namespace Ruley.Core.Filters
 {
     public class GroupByFilter : Filter
     {
-        public string Key { get; set; }
+        public Property<string> Key { get; set; }
         public Filter Filter { get; set; }
         public List<Filter> Filters { get; set; }
 
@@ -21,7 +21,7 @@ namespace Ruley.Core.Filters
                 Filter = Filters.ToSingle();
             }
 
-            source.GroupBy(m => m.Data.GetValue(Key)).Subscribe(i =>
+            source.GroupBy(m => Key.GetValue(m)).Subscribe(i =>
             {
                 var subject = new Subject<Event>();
                 var serialize = JsonConvert.SerializeObject(new FilterSerializationWrapper() { Filter = Filter }, new JsonSerializerSettings() {TypeNameHandling = TypeNameHandling.Auto});

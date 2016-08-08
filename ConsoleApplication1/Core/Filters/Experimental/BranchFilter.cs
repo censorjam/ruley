@@ -4,7 +4,7 @@ namespace Ruley.Core.Filters
 {
     public class BranchFilter : InlineFilter
     {
-        public Property<string> Field { get; set; }
+        public Property<string> Value { get; set; }
         public InlineFilter Then { get; set; }
         public InlineFilter Else { get; set; }
 
@@ -13,7 +13,7 @@ namespace Ruley.Core.Filters
             Then = Then ?? new PassThroughFilter();
             Else = Else ?? new BlockFilter();
 
-            var match = (bool)x.Data[Field.Get(x)];
+            var match = (bool)Value.GetValue(x);
             var next = match ? DoTrue(x) : DoFalse(x);
 
             return next;

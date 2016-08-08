@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ruley", "ConsoleApplication1\Ruley.csproj", "{F7A010E3-1777-4B1D-9787-2DB46549A03D}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ruley.Redis", "Ruley.Redis\Ruley.Redis.csproj", "{C2386C3D-8EDF-457A-8D5C-CA2A140C8EAE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ruley.Monitoring.Redis", "Ruley.Monitoring.Redis\Ruley.Monitoring.Redis.csproj", "{1CE069C0-3B64-46C2-961E-612CEFE902E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ruley.Graphite", "Ruley.Graphite\Ruley.Graphite.csproj", "{5D6CCC6F-EAD1-491F-BD0B-9F85D5BD22FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{1CE069C0-3B64-46C2-961E-612CEFE902E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CE069C0-3B64-46C2-961E-612CEFE902E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CE069C0-3B64-46C2-961E-612CEFE902E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D6CCC6F-EAD1-491F-BD0B-9F85D5BD22FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D6CCC6F-EAD1-491F-BD0B-9F85D5BD22FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D6CCC6F-EAD1-491F-BD0B-9F85D5BD22FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D6CCC6F-EAD1-491F-BD0B-9F85D5BD22FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

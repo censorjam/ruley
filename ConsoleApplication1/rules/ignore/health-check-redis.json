@@ -1,0 +1,119 @@
+﻿{
+    "debug": false,
+
+    "globals": {
+    },
+
+    "parameters": [
+        { "host": "127.0.0.1", "port": 6379, "password": "DEV_bc7859c63ce32c5f6636717d9068f234bf4095eaeeff86b08d480396648bfe21" },
+        { "host": "ddbrds001", "port": 6387, "password": "DEV_bc7859c63ce32c5f6636717d9068f234bf4095eaeeff86b08d480396648bfe21" },
+        { "host": "l1dbrds502", "port": 6379, "password": "PROD_eJ1WB8dW58uyK5unEXufzdMd0k86pQ0CMoTKrcldv5F1dDyFvBnTUuGqGpoqeMaBz" }
+    ],
+
+    "template": {
+        "input": {
+            "$type": "@interval",
+            "period": 5000
+        },
+
+        "filters": [
+            {
+                "$type": "@redis.ping",
+                "host": "{host}",
+                "password": "{password}",
+                "port": "[port]"
+            },
+            {
+                "$type": "@map",
+                "value": "[exception]",
+                "map": [
+                    {
+                        "key": null,
+                        "value": { "status": "OK", "isHealthy": true }
+                    },
+                    {
+                        "key": "$default",
+                        "value": { "status": "Critical", "isHealthy": false }
+                    }
+                ]
+            },
+            {
+                "$type": "@conditional",
+                "field": "[pingMs]",
+                "level": 50,
+                "match": ">",
+                "destination": "highLatency"
+            },
+            {
+                "$type": "@map",
+                "value": "[highLatency]",
+                "map": [
+                    {
+                        "key": true,
+                        "value": { "status": "Warning (high latency)", "isHealthy": false }
+                    }
+                ]
+            },
+            {
+                "$type": "@distinct",
+                "value": "{status}"
+            },
+            {
+                "$type": "@map",
+                "value": "[isHealthy]",
+                "map": [
+                    { "key": true, "value": { "emoji": ":ok:" } },
+                    { "key": false, "value": { "emoji": ":ambulance:" } }
+                ]
+            },
+            {
+                "$type": "@map",
+                "value": "[pingMs]",
+                "map": [
+                    {
+                        "key": null,
+                        "value": { "pingMs": "N/A" }
+                    }
+                ]
+            },
+            {
+                "$type": "@map",
+                "value": "[exception]",
+                "map": [
+                    {
+                        "key": null,
+                        "value": { "exception": "None" }
+                    }
+                ]
+            },
+            {
+                "$type": "@if",
+                "value": "[isHealthy]",
+                "then": {
+                    "$type": "@slack",
+                    "webHookUrl": "@slack_url",
+                    "channel": "#test-alerts",
+                    "username": "Redis ({host}:{port})",
+                    "emoji": "{emoji}",
+                    "message": "Status is *{status}"
+                },
+                "else": {
+                    "$type": "@slack",
+                    "webHookUrl": "@slack_url",
+                    "channel": "#test-alerts",
+                    "username": "Redis ({host}:{port})",
+                    "emoji": "{emoji}",
+                    "message": "Status is *{status}",
+                    "attachmentMessage": "Latency(ms): {pingMs}\nException: {exception}"
+                }
+            }
+        ],
+
+        "outputs": [
+            {
+                "$type": "@console",
+                "enabled": true
+            }
+        ]
+    }
+}

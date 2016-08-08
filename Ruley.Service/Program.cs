@@ -52,6 +52,8 @@ namespace TestApp
             var rm = new RuleManager();
             RuleModule.RuleManager = rm;
             rm.Start();
+            //rm.StartFileWatcher();
+            
             //var uri = new Uri("http://localhost:12345/");
             //_nancy = new NancyHost(uri);
             //_nancy.Start();

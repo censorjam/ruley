@@ -8,7 +8,7 @@ namespace Ruley.Core.Filters
     public abstract class ConditionalBaseFilter : InlineFilter
     {
         [JsonProperty(Required = Required.Always)]
-        public Property<string> Field { get; set; }
+        public Property<double> Field { get; set; }
         [JsonProperty(Required = Required.Always)]
         public Property<object> Level { get; set; }
         [JsonProperty(Required = Required.Always)]
@@ -21,8 +21,7 @@ namespace Ruley.Core.Filters
                 IDictionary<string, object> e = m.Data;
                 
                 Logger.Debug("casting value");
-                var fieldName = Field.Get(m);
-                var f = m.Data.GetValue(fieldName);
+                var f = Field.Get(m);
 
                 var value = Convert.ToDouble(f);
 

@@ -1,0 +1,36 @@
+﻿{
+    "debug": false,
+
+    "template": {
+        "input": {
+            "$type": "@bus.in",
+            "key": "health-check"
+        },
+
+        "filters": [
+            {
+                "$type": "@map",
+                "value": "[isHealthy]",
+                "map": [
+                    { "key": true, "value": { "emoji": ":ok:", "info": null } },
+                    { "key": false, "value":  { "emoji": ":ambulance:", "info": "error!!" } }
+                ]
+            },
+            {
+                "$type": "@slack",
+                "webHookUrl": "@slack_url",
+                "channel": "#test-alerts",
+                "username": "{name}",
+                "emoji": "{emoji}",
+                "message": "Status is *{status}*{infoMessage}"
+            }
+        ],
+
+        "outputs": [
+            {
+                "$type": "@console",
+                "enabled": false
+            }
+        ]
+    }
+}

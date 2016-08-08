@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Packages\LibLog.4.2\LibLog.cs" />
     <Compile Include="ConditionalFilterTests.cs" />
     <Compile Include="CountFilterTests.cs" />
     <Compile Include="DynamicTests.cs" />
