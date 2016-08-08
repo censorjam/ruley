@@ -42,13 +42,21 @@ namespace Ruley.Core
             _preprocessor.Alias("@count", "Ruley.Core.Filters.CountFilter, Ruley");
             _preprocessor.Alias("@slack", "Ruley.Core.Filters.SlackFilter, Ruley");
             _preprocessor.Alias("@passthrough", "Ruley.Core.Filters.PassThroughFilter, Ruley");
-            
+            _preprocessor.Alias("@graphite", "Ruley.Core.Filters.GraphiteFilter, Ruley");
+
             _preprocessor.Alias("@bus.out", "Ruley.Core.Filters.MessageBusPublisherFilter, Ruley");
             _preprocessor.Alias("@bus.in", "Ruley.Core.Filters.MessageBusSubscriberFilter, Ruley");
 
             _preprocessor.Alias("@if", "Ruley.Core.Filters.BranchFilter, Ruley");
             _preprocessor.Alias("@replayField", "Ruley.Core.Filters.ReplayFieldFilter, Ruley");
             _preprocessor.Alias("@regex", "Ruley.Core.Filters.RegexFilter, Ruley");
+
+            _preprocessor.Alias("@uppercase", "Ruley.Core.Filters.UpperCaseFilter, Ruley");
+            _preprocessor.Alias("@lowercase", "Ruley.Core.Filters.LowerCaseFilter, Ruley");
+            _preprocessor.Alias("@maxlength", "Ruley.Core.Filters.MaxLengthFilter, Ruley");
+
+            _preprocessor.Alias("@email", "Ruley.Core.Filters.EmailFilter, Ruley");
+
             _preprocessor.Alias("@distinct", "Ruley.Core.Filters.DistinctFilter, Ruley");
             _preprocessor.Alias("@skip", "Ruley.Core.Filters.SkipFilter, Ruley");
             _preprocessor.Alias("@http", "Ruley.Core.Filters.HttpFilter, Ruley");
