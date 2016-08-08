@@ -27,6 +27,9 @@ namespace Ruley.Core
 
         public void Start()
         {
+            if (Parameters == null)
+                Parameters = new List<JObject>() { new JObject() };
+
             foreach (var obj in Parameters)
             {
                 var rule = JsonConvert.DeserializeObject<Rule>(JsonConvert.SerializeObject(Template, new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.Auto }), new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.Auto });
