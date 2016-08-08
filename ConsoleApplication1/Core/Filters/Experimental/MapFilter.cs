@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Newtonsoft.Json;
 using Ruley.Dynamic;
 
@@ -15,12 +16,12 @@ namespace Ruley.Core.Filters
     {
         [JsonProperty(Required = Required.Always)]
         public Property<string> Value { get; set; }
-
         public List<Mapping> Map { get; set; }
 
-        public DynamicDictionary Default { get; set; }
+        public Property<bool> IgnoreCase { get; set; }
+        public Property<bool> RegexMatch { get; set; }
 
-        public object Test { get; set; }
+        private DynamicDictionary _default { get; set; }
 
         public override void ValidateComposition()
         {
@@ -41,10 +42,18 @@ namespace Ruley.Core.Filters
                 }
             }
 
-            if (Default == null)
-                throw new Exception("No match and no default value set");
+            if (_default == null)
+            {
+                //todo needs optimising?
+                var d = Map.FirstOrDefault(i => (i.Key is string && (string) i.Key == "$default"));
+                if (d != null) 
+                    _default = d.Value;
+            }
 
-            msg.Data.Merge(Default);
+            if (_default == null)
+                return msg;
+
+            msg.Data.Merge(_default);
             return msg;
         }
     }
